@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import obsidianLogo from '@/assets/obsidian-logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,8 +35,13 @@ const Navigation = () => {
           {/* Logo */}
           <a 
             href="#" 
-            className="font-display text-2xl lg:text-3xl tracking-[0.3em] text-cream uppercase"
+            className="font-display text-2xl lg:text-3xl tracking-[0.3em] text-cream uppercase flex items-center gap-3 hover:opacity-90 transition-opacity duration-300"
           >
+            <img 
+              src={obsidianLogo} 
+              alt="Obsidian Logo" 
+              className="h-8 w-8 lg:h-10 lg:w-10 object-contain"
+            />
             Obsidian
           </a>
 

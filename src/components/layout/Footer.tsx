@@ -1,3 +1,5 @@
+import obsidianLogo from '@/assets/obsidian-logo.png';
+
 const Footer = () => {
   return (
     <footer className="py-16 lg:py-20 bg-obsidian border-t border-border">
@@ -5,7 +7,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <h3 className="font-display text-2xl tracking-[0.3em] text-cream uppercase mb-4">
+            <h3 className="font-display text-2xl tracking-[0.3em] text-cream uppercase mb-4 flex items-center gap-3">
+              <img 
+                src={obsidianLogo} 
+                alt="Obsidian Logo" 
+                className="h-10 w-10 object-contain"
+              />
               Obsidian
             </h3>
             <p className="font-body text-sm text-cream-muted leading-relaxed max-w-md mb-6">
