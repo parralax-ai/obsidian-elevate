@@ -11,7 +11,8 @@ const Footer = () => {
               <img 
                 src={obsidianLogo} 
                 alt="Obsidian Logo" 
-                className="h-10 w-10 object-contain"
+                className="h-10 w-10 object-contain flex-shrink-0"
+                style={{ display: 'block' }}
               />
               Obsidian
             </h3>

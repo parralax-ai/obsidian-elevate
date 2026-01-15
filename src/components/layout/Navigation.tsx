@@ -40,7 +40,8 @@ const Navigation = () => {
             <img 
               src={obsidianLogo} 
               alt="Obsidian Logo" 
-              className="h-8 w-8 lg:h-10 lg:w-10 object-contain"
+              className="h-8 w-8 lg:h-10 lg:w-10 object-contain flex-shrink-0"
+              style={{ display: 'block' }}
             />
             Obsidian
           </a>
