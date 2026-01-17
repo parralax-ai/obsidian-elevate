@@ -43,7 +43,7 @@ const Services = () => {
           </h2>
           <p className="font-body text-base text-cream-muted leading-relaxed">
             Each engagement is tailored to your organisation's unique needs, culture, 
-            and expectations. We don't offer packages—we create partnerships.
+            and expectations. We don't offer packages - we create partnerships.
           </p>
         </div>
 
