@@ -29,6 +29,11 @@ const Navigation = () => {
           ? 'bg-obsidian/95 backdrop-blur-md border-b border-border' 
           : 'bg-transparent'
       }`}
+      style={isMobileMenuOpen ? {
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        backgroundColor: 'hsl(var(--obsidian) / 0.95)'
+      } : undefined}
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20 lg:h-24">
@@ -74,7 +79,14 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 bg-obsidian/98 backdrop-blur-md border-b border-border animate-fade-up">
+          <div 
+            className="lg:hidden absolute top-full left-0 right-0 bg-obsidian/98 backdrop-blur-md border-b border-border animate-fade-up"
+            style={{
+              backdropFilter: 'blur(12px)',
+              WebkitBackdropFilter: 'blur(12px)',
+              backgroundColor: 'hsl(var(--obsidian) / 0.98)'
+            }}
+          >
             <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link) => (
                 <a
