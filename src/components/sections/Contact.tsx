@@ -59,18 +59,18 @@ const Contact = () => {
       {/* Top Decorative Line */}
       <div className="absolute top-0 left-1/2 w-px h-24 bg-gradient-to-b from-gold/40 to-transparent" />
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-full">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24">
           {/* Left Content */}
-          <div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-gold mb-6">
+          <div className="w-full">
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-gold mb-4 sm:mb-6">
               Begin a Partnership
             </p>
             <h2 className="font-display text-2xl sm:text-3xl lg:text-5xl font-light text-cream leading-tight mb-4 sm:mb-6">
               Let's elevate your<br />
               <span className="italic text-cream-muted">workplace experience</span>
             </h2>
-            <p className="font-body text-sm sm:text-base text-cream-muted leading-relaxed mb-8 sm:mb-12 max-w-lg">
+            <p className="font-body text-sm sm:text-base text-cream-muted leading-relaxed mb-6 sm:mb-8 lg:mb-12 w-full">
               We approach every inquiry as the beginning of a potential partnership. 
               Tell us about your organisation and your workplace vision—we'd love to 
               explore how Obsidian might serve you.
@@ -100,57 +100,57 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-charcoal rounded-sm p-6 sm:p-8 lg:p-12">
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-                <div className="space-y-2">
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted">
+          <div className="bg-charcoal rounded-sm p-6 sm:p-8 lg:p-12 w-full">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 w-full">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 w-full">
+                <div className="space-y-2 w-full">
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block">
                     Your Name
                   </label>
                   <Input 
                     type="text" 
                     name="name"
                     required
-                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors"
+                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full"
                     placeholder="Full name"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted">
+                <div className="space-y-2 w-full">
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block">
                     Email Address
                   </label>
                   <Input 
                     type="email" 
                     name="email"
                     required
-                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors"
+                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full"
                     placeholder="you@company.com"
                   />
                 </div>
               </div>
               
-              <div className="space-y-2">
-                <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted">
+              <div className="space-y-2 w-full">
+                <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block">
                   Organisation
                 </label>
                 <Input 
                   type="text" 
                   name="organisation"
                   required
-                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors"
+                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full"
                   placeholder="Company name"
                 />
               </div>
               
-              <div className="space-y-2">
-                <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted">
+              <div className="space-y-2 w-full">
+                <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block">
                   Your Message
                 </label>
                 <Textarea 
                   name="message"
                   required
                   rows={4}
-                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors resize-none text-sm sm:text-base"
+                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors resize-none text-sm sm:text-base w-full"
                   placeholder="Tell us about your workplace and what you're looking for..."
                 />
               </div>
