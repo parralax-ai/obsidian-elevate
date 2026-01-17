@@ -55,22 +55,22 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-obsidian relative">
+    <section id="contact" className="py-16 sm:py-20 lg:py-32 bg-obsidian relative">
       {/* Top Decorative Line */}
       <div className="absolute top-0 left-1/2 w-px h-24 bg-gradient-to-b from-gold/40 to-transparent" />
       
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-24">
           {/* Left Content */}
           <div>
             <p className="font-body text-xs tracking-[0.3em] uppercase text-gold mb-6">
               Begin a Partnership
             </p>
-            <h2 className="font-display text-3xl lg:text-5xl font-light text-cream leading-tight mb-6">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-5xl font-light text-cream leading-tight mb-4 sm:mb-6">
               Let's elevate your<br />
               <span className="italic text-cream-muted">workplace experience</span>
             </h2>
-            <p className="font-body text-base text-cream-muted leading-relaxed mb-12 max-w-lg">
+            <p className="font-body text-sm sm:text-base text-cream-muted leading-relaxed mb-8 sm:mb-12 max-w-lg">
               We approach every inquiry as the beginning of a potential partnership. 
               Tell us about your organisation and your workplace vision—we'd love to 
               explore how Obsidian might serve you.
@@ -100,9 +100,9 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-charcoal rounded-sm p-8 lg:p-12">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-6">
+          <div className="bg-charcoal rounded-sm p-6 sm:p-8 lg:p-12">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
                   <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted">
                     Your Name
@@ -149,8 +149,8 @@ const Contact = () => {
                 <Textarea 
                   name="message"
                   required
-                  rows={5}
-                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors resize-none"
+                  rows={4}
+                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors resize-none text-sm sm:text-base"
                   placeholder="Tell us about your workplace and what you're looking for..."
                 />
               </div>
