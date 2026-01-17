@@ -12,12 +12,46 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
     
-    toast.success('Thank you for reaching out. We\'ll be in touch soon.');
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    // Get form values
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const organisation = formData.get('organisation') as string;
+    const message = formData.get('message') as string;
+    
+    try {
+      // Send email using Web3Forms - emails go directly to erik.linsdell@gmail.com
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY || 'aeaccf19-3292-4d41-966e-20832794ae0e', // Get your free key from web3forms.com using erik.linsdell@gmail.com
+          subject: `New Contact Form Submission from ${name} - ${organisation}`,
+          from_name: name,
+          from_email: email,
+          name,
+          email,
+          organisation,
+          message,
+        }),
+      });
+
+      if (response.ok) {
+        toast.success('Thank you for reaching out. We\'ll be in touch soon.');
+        form.reset();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast.error('Sorry, there was an error sending your message. Please try again or email us directly.');
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -75,6 +109,7 @@ const Contact = () => {
                   </label>
                   <Input 
                     type="text" 
+                    name="name"
                     required
                     className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors"
                     placeholder="Full name"
@@ -86,6 +121,7 @@ const Contact = () => {
                   </label>
                   <Input 
                     type="email" 
+                    name="email"
                     required
                     className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors"
                     placeholder="you@company.com"
@@ -99,6 +135,7 @@ const Contact = () => {
                 </label>
                 <Input 
                   type="text" 
+                  name="organisation"
                   required
                   className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors"
                   placeholder="Company name"
@@ -110,6 +147,7 @@ const Contact = () => {
                   Your Message
                 </label>
                 <Textarea 
+                  name="message"
                   required
                   rows={5}
                   className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors resize-none"
