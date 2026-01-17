@@ -25,7 +25,7 @@ const services = [
   {
     number: '05',
     title: 'Custom Workplace Experiences',
-    description: 'Curated solutions beyond cleaning—ambient enhancements, seasonal touches, and thoughtful details that elevate the employee experience.',
+    description: 'Curated solutions beyond cleaning - ambient enhancements, seasonal touches, and thoughtful details that elevate the employee experience.',
   },
 ];
 

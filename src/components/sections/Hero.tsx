@@ -43,7 +43,7 @@ const Hero = () => {
             style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}
           >
             We partner with forward-thinking organisations to elevate workplace 
-            environments—creating spaces that inspire, impress, and draw employees 
+            environments - creating spaces that inspire, impress, and draw employees 
             back to the office.
           </p>
 

@@ -29,7 +29,7 @@ const About = () => {
               </p>
               <p>
                 We are not a cleaning company in the traditional sense. We are a 
-                workplace experience partner—integrating precision service with 
+                workplace experience partner - integrating precision service with 
                 thoughtful touches that make employees want to be in the office.
               </p>
             </div>
@@ -88,7 +88,7 @@ const About = () => {
               {/* Quote */}
               <blockquote className="border-l-2 border-gold pl-6 my-8">
                 <p className="font-display text-lg italic text-cream leading-relaxed">
-                  "Excellence isn't a service level—it's a standard we maintain 
+                  "Excellence isn't a service level - it's a standard we maintain 
                   every single day, in every single space."
                 </p>
               </blockquote>

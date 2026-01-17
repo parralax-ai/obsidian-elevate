@@ -66,7 +66,7 @@ const Contact = () => {
             </h2>
             <p className="font-body text-sm sm:text-base text-cream-muted leading-relaxed mb-6 sm:mb-8 lg:mb-12 w-full">
               We approach every inquiry as the beginning of a potential partnership. 
-              Tell us about your organisation and your workplace vision—we'd love to 
+              Tell us about your organisation and your workplace vision - we'd love to 
               explore how Obsidian might serve you.
             </p>
 

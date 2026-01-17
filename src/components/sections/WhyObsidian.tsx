@@ -5,7 +5,7 @@ const features = [
   {
     icon: Eye,
     title: 'Precision in Every Detail',
-    description: 'We obsess over the details others overlook—from perfectly aligned chairs to immaculate surfaces that reflect your standards.',
+    description: 'We obsess over the details others overlook - from perfectly aligned chairs to immaculate surfaces that reflect your standards.',
   },
   {
     icon: Shield,
@@ -15,7 +15,7 @@ const features = [
   {
     icon: Sparkles,
     title: 'Experience, Not Just Service',
-    description: 'Beyond cleaning, we curate workplace moments—from ambient touches to seasonal details that elevate the everyday.',
+    description: 'Beyond cleaning, we curate workplace moments - from ambient touches to seasonal details that elevate the everyday.',
   },
   {
     icon: Users,
@@ -42,7 +42,7 @@ const WhyObsidian = () => {
               <span className="italic text-cream-muted">of workplace care</span>
             </h2>
             <p className="font-body text-base text-cream-muted leading-relaxed mb-12 max-w-xl">
-              We understand that your workplace is more than a building—it's where 
+              We understand that your workplace is more than a building - it's where 
               culture lives, deals are made, and talent is nurtured. Obsidian exists 
               to ensure that environment always reflects your highest standards.
             </p>

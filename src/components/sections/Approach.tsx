@@ -2,7 +2,7 @@ const steps = [
   {
     number: '01',
     title: 'Discovery & Alignment',
-    description: 'We begin with deep understanding—your culture, expectations, and what success looks like for your workplace.',
+    description: 'We begin with deep understanding - your culture, expectations, and what success looks like for your workplace.',
   },
   {
     number: '02',
