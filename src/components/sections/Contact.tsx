@@ -49,14 +49,14 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-20 lg:py-32 bg-obsidian relative">
+    <section id="contact" className="py-16 sm:py-20 lg:py-32 bg-obsidian relative overflow-x-hidden">
       {/* Top Decorative Line */}
       <div className="absolute top-0 left-1/2 w-px h-24 bg-gradient-to-b from-gold/40 to-transparent" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-full">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24">
           {/* Left Content */}
-          <div className="w-full">
+          <div className="w-full min-w-0">
             <p className="font-body text-xs tracking-[0.3em] uppercase text-gold mb-4 sm:mb-6">
               Begin a Partnership
             </p>
@@ -94,57 +94,57 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-charcoal rounded-sm p-6 sm:p-8 lg:p-12 w-full">
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 w-full">
+          <div className="bg-charcoal rounded-sm p-6 sm:p-8 lg:p-12 w-full min-w-0 box-border">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 w-full m-0">
               <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 w-full">
-                <div className="space-y-2 w-full">
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block">
+                <div className="space-y-2 w-full min-w-0">
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block mb-2">
                     Your Name
                   </label>
                   <Input 
                     type="text" 
                     name="name"
                     required
-                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full"
+                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full m-0"
                     placeholder="Full name"
                   />
                 </div>
-                <div className="space-y-2 w-full">
-                  <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block">
+                <div className="space-y-2 w-full min-w-0">
+                  <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block mb-2">
                     Email Address
                   </label>
                   <Input 
                     type="email" 
                     name="email"
                     required
-                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full"
+                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full m-0"
                     placeholder="you@company.com"
                   />
                 </div>
               </div>
               
-              <div className="space-y-2 w-full">
-                <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block">
+              <div className="space-y-2 w-full min-w-0">
+                <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block mb-2">
                   Organisation
                 </label>
                 <Input 
                   type="text" 
                   name="organisation"
                   required
-                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full"
+                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full m-0"
                   placeholder="Company name"
                 />
               </div>
               
-              <div className="space-y-2 w-full">
-                <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block">
+              <div className="space-y-2 w-full min-w-0">
+                <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block mb-2">
                   Your Message
                 </label>
                 <Textarea 
                   name="message"
                   required
                   rows={4}
-                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors resize-none text-sm sm:text-base w-full"
+                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors resize-none text-sm sm:text-base w-full m-0"
                   placeholder="Tell us about your workplace and what you're looking for..."
                 />
               </div>
