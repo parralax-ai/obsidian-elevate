@@ -22,16 +22,19 @@ const Navigation = () => {
     { href: '#about', label: 'About' },
   ];
 
-  const navClasses = isScrolled || isMobileMenuOpen
-    ? 'bg-obsidian/95 backdrop-blur-md border-b border-border'
-    : 'bg-transparent';
+  const shouldBlur = isScrolled || isMobileMenuOpen;
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${navClasses}`}
-      style={isMobileMenuOpen || isScrolled ? {
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        shouldBlur 
+          ? 'bg-obsidian/95 border-b border-border' 
+          : 'bg-transparent'
+      }`}
+      style={shouldBlur ? {
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
+        backgroundColor: 'hsla(0, 0%, 4%, 0.95)'
       } : {}}
     >
       <div className="container mx-auto px-6 lg:px-12">
@@ -79,10 +82,11 @@ const Navigation = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div 
-            className="lg:hidden absolute top-full left-0 right-0 bg-obsidian/98 backdrop-blur-md border-b border-border animate-fade-up"
+            className="lg:hidden absolute top-full left-0 right-0 border-b border-border animate-fade-up"
             style={{
               backdropFilter: 'blur(12px)',
               WebkitBackdropFilter: 'blur(12px)',
+              backgroundColor: 'hsla(0, 0%, 4%, 0.98)'
             }}
           >
             <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
