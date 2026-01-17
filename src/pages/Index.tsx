@@ -10,7 +10,7 @@ import Footer from '@/components/layout/Footer';
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-obsidian">
+    <main className="min-h-screen bg-obsidian w-full max-w-full overflow-x-hidden">
       <Navigation />
       <Hero />
       <WhyObsidian />
