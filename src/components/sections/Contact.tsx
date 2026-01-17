@@ -15,36 +15,30 @@ const Contact = () => {
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     
-    // Get form values
+    // Add Web3Forms access key
+    formData.append('access_key', import.meta.env.VITE_WEB3FORMS_KEY || 'aeaccf19-3292-4d41-966e-20832794ae0e');
+    
+    // Optional: Add subject line
     const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
     const organisation = formData.get('organisation') as string;
-    const message = formData.get('message') as string;
+    if (name && organisation) {
+      formData.append('subject', `New Contact Form Submission from ${name} - ${organisation}`);
+    }
     
     try {
       // Send email using Web3Forms - emails go directly to erik.linsdell@gmail.com
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_KEY || 'aeaccf19-3292-4d41-966e-20832794ae0e', // Get your free key from web3forms.com using erik.linsdell@gmail.com
-          subject: `New Contact Form Submission from ${name} - ${organisation}`,
-          from_name: name,
-          from_email: email,
-          name,
-          email,
-          organisation,
-          message,
-        }),
+        body: formData
       });
 
-      if (response.ok) {
+      const data = await response.json();
+      
+      if (data.success) {
         toast.success('Thank you for reaching out. We\'ll be in touch soon.');
         form.reset();
       } else {
-        throw new Error('Failed to send message');
+        throw new Error(data.message || 'Failed to send message');
       }
     } catch (error) {
       toast.error('Sorry, there was an error sending your message. Please try again or email us directly.');
