@@ -22,18 +22,17 @@ const Navigation = () => {
     { href: '#about', label: 'About' },
   ];
 
+  const navClasses = isScrolled || isMobileMenuOpen
+    ? 'bg-obsidian/95 backdrop-blur-md border-b border-border'
+    : 'bg-transparent';
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        isScrolled || isMobileMenuOpen
-          ? 'bg-obsidian/95 backdrop-blur-md border-b border-border' 
-          : 'bg-transparent'
-      }`}
-      style={isMobileMenuOpen ? {
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${navClasses}`}
+      style={isMobileMenuOpen || isScrolled ? {
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
-        backgroundColor: 'hsl(var(--obsidian) / 0.95)'
-      } : undefined}
+      } : {}}
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20 lg:h-24">
@@ -84,7 +83,6 @@ const Navigation = () => {
             style={{
               backdropFilter: 'blur(12px)',
               WebkitBackdropFilter: 'blur(12px)',
-              backgroundColor: 'hsl(var(--obsidian) / 0.98)'
             }}
           >
             <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
