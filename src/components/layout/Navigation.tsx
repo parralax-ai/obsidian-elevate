@@ -25,7 +25,7 @@ const Navigation = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
-        isScrolled 
+        isScrolled || isMobileMenuOpen
           ? 'bg-obsidian/95 backdrop-blur-md border-b border-border' 
           : 'bg-transparent'
       }`}
