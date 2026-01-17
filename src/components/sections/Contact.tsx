@@ -49,12 +49,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-20 lg:py-32 bg-obsidian relative overflow-x-hidden">
+    <section id="contact" className="py-16 sm:py-20 lg:py-32 bg-obsidian relative overflow-x-hidden w-full">
       {/* Top Decorative Line */}
       <div className="absolute top-0 left-1/2 w-px h-24 bg-gradient-to-b from-gold/40 to-transparent" />
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-full">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24">
+      <div className="w-full max-w-full mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 w-full">
           {/* Left Content */}
           <div className="w-full min-w-0">
             <p className="font-body text-xs tracking-[0.3em] uppercase text-gold mb-4 sm:mb-6">
@@ -73,7 +73,7 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-sm bg-gold/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-sm bg-gold/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5 text-gold" />
                 </div>
                 <div>
@@ -82,7 +82,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-sm bg-gold/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-sm bg-gold/10 flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5 text-gold" />
                 </div>
                 <div>
@@ -94,10 +94,10 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-charcoal rounded-sm p-6 sm:p-8 lg:p-12 w-full min-w-0 box-border">
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 w-full m-0">
-              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 w-full">
-                <div className="space-y-2 w-full min-w-0">
+          <div className="bg-charcoal rounded-sm p-6 sm:p-8 lg:p-12 w-full min-w-0">
+            <form onSubmit={handleSubmit} className="w-full">
+              <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 w-full mb-4 sm:mb-6">
+                <div className="w-full">
                   <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block mb-2">
                     Your Name
                   </label>
@@ -105,11 +105,11 @@ const Contact = () => {
                     type="text" 
                     name="name"
                     required
-                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full m-0"
+                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full"
                     placeholder="Full name"
                   />
                 </div>
-                <div className="space-y-2 w-full min-w-0">
+                <div className="w-full">
                   <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block mb-2">
                     Email Address
                   </label>
@@ -117,13 +117,13 @@ const Contact = () => {
                     type="email" 
                     name="email"
                     required
-                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full m-0"
+                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full"
                     placeholder="you@company.com"
                   />
                 </div>
               </div>
               
-              <div className="space-y-2 w-full min-w-0">
+              <div className="w-full mb-4 sm:mb-6">
                 <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block mb-2">
                   Organisation
                 </label>
@@ -131,12 +131,12 @@ const Contact = () => {
                   type="text" 
                   name="organisation"
                   required
-                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full m-0"
+                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full"
                   placeholder="Company name"
                 />
               </div>
               
-              <div className="space-y-2 w-full min-w-0">
+              <div className="w-full mb-4 sm:mb-6">
                 <label className="font-body text-xs tracking-[0.15em] uppercase text-cream-muted block mb-2">
                   Your Message
                 </label>
@@ -144,7 +144,7 @@ const Contact = () => {
                   name="message"
                   required
                   rows={4}
-                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors resize-none text-sm sm:text-base w-full m-0"
+                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors resize-none text-sm sm:text-base w-full"
                   placeholder="Tell us about your workplace and what you're looking for..."
                 />
               </div>
@@ -153,7 +153,7 @@ const Contact = () => {
                 type="submit" 
                 variant="luxury" 
                 size="xl" 
-                className="w-full group"
+                className="w-full group mb-4"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? 'Sending...' : 'Start the Conversation'}
