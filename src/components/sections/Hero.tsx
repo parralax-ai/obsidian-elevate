@@ -27,14 +27,8 @@ const Hero = () => {
           </p>
           
           {/* Main Headline */}
-          <h1 
-            className="font-display text-4xl md:text-5xl lg:text-7xl font-light text-cream leading-[1.1] mb-8 opacity-0 animate-fade-up"
-            style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
-          >
-            Redefining the{' '}
-            <span className="italic text-gold-light">in-office experience</span>
-            <br />
-            through precision and care
+          <h1 className="font-display text-4xl md:text-5xl lg:text-7xl font-light text-cream leading-[1.1] mb-8 opacity-0 animate-fade-up" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
+            Premium Workplace Cleaning Services in Melbourne
           </h1>
 
           {/* Supporting Text */}

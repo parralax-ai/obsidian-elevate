@@ -55,7 +55,7 @@ const Clients = () => {
             <p className="font-body text-base text-cream-muted leading-relaxed">
               We partner with organisations that share our commitment to excellence. 
               Our selective approach ensures we can deliver the consistent, personalised 
-              service that every client deserves.
+              service that every client deserves. Learn about <a href="#services" className="text-gold hover:text-gold-light underline">our workplace services</a> or <a href="#about" className="text-gold hover:text-gold-light underline">our story</a>.
             </p>
           </div>
         </div>

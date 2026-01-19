@@ -30,7 +30,7 @@ const About = () => {
               <p>
                 We are not a cleaning company in the traditional sense. We are a 
                 workplace experience partner - integrating precision service with 
-                thoughtful touches that make employees want to be in the office.
+                thoughtful touches that make employees want to be in the office. Explore our <a href="#services" className="text-gold hover:text-gold-light underline">comprehensive services</a> and see <a href="#clients" className="text-gold hover:text-gold-light underline">the organisations we partner with</a>.
               </p>
             </div>
 

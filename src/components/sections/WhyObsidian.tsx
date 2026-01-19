@@ -44,7 +44,7 @@ const WhyObsidian = () => {
             <p className="font-body text-base text-cream-muted leading-relaxed mb-12 max-w-xl">
               We understand that your workplace is more than a building - it's where 
               culture lives, deals are made, and talent is nurtured. Obsidian exists 
-              to ensure that environment always reflects your highest standards.
+              to ensure that environment always reflects your highest standards. Discover our <a href="#approach" className="text-gold hover:text-gold-light underline">workplace cleaning approach</a> and explore our <a href="#services" className="text-gold hover:text-gold-light underline">premium cleaning services</a>.
             </p>
 
             {/* Features Grid */}

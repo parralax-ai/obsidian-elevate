@@ -39,7 +39,7 @@ const Approach = () => {
           <p className="font-body text-base text-cream-muted leading-relaxed">
             We work alongside your leadership, office managers, and facilities teams 
             to create a service that feels like an extension of your own commitment 
-            to excellence.
+            to excellence. Learn more about <a href="#services" className="text-gold hover:text-gold-light underline">our services</a> or see <a href="#clients" className="text-gold hover:text-gold-light underline">who we work with</a>.
           </p>
         </div>
 
