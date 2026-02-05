@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-import obsidianLogo from '@/assets/obsidian-logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,12 +44,31 @@ const Navigation = () => {
             to="/" 
             className="font-display text-2xl lg:text-3xl tracking-[0.3em] text-foreground uppercase flex items-center gap-3 hover:opacity-90 transition-opacity duration-300"
           >
-            <img 
-              src={obsidianLogo} 
-              alt="Obsidian Commercial Logo" 
-              className="h-8 w-8 lg:h-10 lg:w-10 object-contain flex-shrink-0"
-              style={{ display: 'block' }}
-            />
+            {/* Obsidian Logo with Shine */}
+            <div 
+              className="relative h-8 w-8 lg:h-10 lg:w-10 flex-shrink-0 rounded-sm overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)',
+                boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.3)',
+              }}
+            >
+              {/* Shine effect */}
+              <div 
+                className="absolute inset-0 opacity-30"
+                style={{
+                  background: 'linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0.1) 50%, transparent 100%)',
+                  transform: 'translateX(-100%) translateY(-100%)',
+                  animation: 'shine 3s infinite',
+                }}
+              />
+              {/* Obsidian texture overlay */}
+              <div 
+                className="absolute inset-0 opacity-20"
+                style={{
+                  backgroundImage: 'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
+                }}
+              />
+            </div>
             Obsidian Commercial
           </Link>
 
