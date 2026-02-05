@@ -1,6 +1,6 @@
 import Navigation from '@/components/layout/Navigation';
 import Hero from '@/components/sections/Hero';
-import WhyObsidian from '@/components/sections/WhyObsidian';
+import Technology from '@/components/sections/WhyObsidian';
 import Approach from '@/components/sections/Approach';
 import Services from '@/components/sections/Services';
 import Clients from '@/components/sections/Clients';
@@ -10,14 +10,14 @@ import Footer from '@/components/layout/Footer';
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-obsidian w-full max-w-full overflow-x-hidden">
+    <main className="min-h-screen bg-background w-full max-w-full overflow-x-hidden">
       <Navigation />
       <Hero />
-      <WhyObsidian />
-      <Approach />
-      <Services />
-      <Clients />
       <About />
+      <Services />
+      <Technology />
+      <Approach />
+      <Clients />
       <Contact />
       <Footer />
     </main>

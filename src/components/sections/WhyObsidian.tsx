@@ -1,83 +1,137 @@
-import { Shield, Eye, Sparkles, Users } from 'lucide-react';
-import detailImage from '@/assets/detail-surfaces.jpg';
+import { Monitor, Shield, CheckCircle2, BarChart3, Clock, FileText, Users, AlertCircle } from 'lucide-react';
 
-const features = [
+const technologyFeatures = [
   {
-    icon: Eye,
-    title: 'Precision in Every Detail',
-    description: 'We obsess over the details others overlook - from perfectly aligned chairs to immaculate surfaces that reflect your standards.',
+    icon: CheckCircle2,
+    title: 'Smart Digital Checklists',
+    description: 'With photos, notes, signatures, and timestamps for complete accountability.',
   },
   {
-    icon: Shield,
-    title: 'Discreet Professionalism',
-    description: 'Our teams work seamlessly within your environment, maintaining confidentiality and minimal disruption to your operations.',
+    icon: BarChart3,
+    title: 'Real-Time Dashboards',
+    description: 'Live performance dashboards and audit-ready reporting for full visibility.',
   },
   {
-    icon: Sparkles,
-    title: 'Experience, Not Just Service',
-    description: 'Beyond cleaning, we curate workplace moments - from ambient touches to seasonal details that elevate the everyday.',
+    icon: Clock,
+    title: 'Time & Attendance',
+    description: 'KPI reporting and workforce visibility across all sites.',
   },
   {
-    icon: Users,
-    title: 'True Partnership',
-    description: 'We align with your leadership, HR, and facilities teams to ensure our service reflects your company culture and values.',
+    icon: AlertCircle,
+    title: 'Issue Tracking',
+    description: 'Rapid response and resolution tracking with verified completion.',
   },
 ];
 
-const WhyObsidian = () => {
+const Technology = () => {
   return (
-    <section className="py-24 lg:py-32 bg-obsidian-light relative overflow-hidden">
-      {/* Subtle Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-obsidian via-obsidian-light to-charcoal opacity-50" />
-      
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left Content */}
-          <div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-gold mb-6">
-              Why Obsidian
+    <section id="technology" className="py-24 lg:py-32 bg-card">
+      <div className="container mx-auto px-6 lg:px-12">
+        {/* Technology Section */}
+        <div className="max-w-4xl mx-auto mb-24">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-cream-muted mb-6 text-center">
+            Technology & Compliance
+          </p>
+          <h2 className="font-display text-3xl lg:text-5xl font-light text-foreground leading-tight mb-8 text-center">
+            Technology – Lighthouse Software
+          </h2>
+          <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed mb-12">
+            <p>
+              Our service delivery is supported by Lighthouse Software, a real-time operations 
+              and compliance management system that provides full visibility across all sites.
             </p>
-            <h2 className="font-display text-3xl lg:text-5xl font-light text-cream leading-tight mb-8">
-              A different standard<br />
-              <span className="italic text-cream-muted">of workplace care</span>
-            </h2>
-            <p className="font-body text-base text-cream-muted leading-relaxed mb-12 max-w-xl">
-              We understand that your workplace is more than a building - it's where 
-              culture lives, deals are made, and talent is nurtured. Obsidian exists 
-              to ensure that environment always reflects your highest standards.
+            <p>
+              Through Lighthouse, we plan, deliver, and verify services with complete transparency, 
+              ensuring accountability and consistency at every level.
             </p>
-
-            {/* Features Grid */}
-            <div className="grid sm:grid-cols-2 gap-8">
-              {features.map((feature, index) => (
-                <div key={index} className="group">
-                  <div className="flex items-center gap-4 mb-3">
-                    <div className="w-10 h-10 rounded-sm bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-colors duration-300">
-                      <feature.icon className="w-5 h-5 text-gold" />
-                    </div>
-                    <h3 className="font-display text-lg text-cream">
-                      {feature.title}
-                    </h3>
-                  </div>
-                  <p className="font-body text-sm text-cream-muted leading-relaxed pl-14">
-                    {feature.description}
-                  </p>
-                </div>
-              ))}
-            </div>
           </div>
 
-          {/* Right Image */}
-          <div className="relative">
-            <div className="aspect-[4/5] rounded-sm overflow-hidden">
-              <img
-                src={detailImage}
-                alt="Premium office detail - black marble with gold accents"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
+          {/* Features Grid */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            {technologyFeatures.map((feature, index) => (
+              <div key={index} className="group">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="w-10 h-10 rounded-sm bg-obsidian/10 flex items-center justify-center group-hover:bg-obsidian/20 transition-colors duration-300">
+                    <feature.icon className="w-5 h-5 text-obsidian" />
+                  </div>
+                  <h3 className="font-display text-lg text-foreground">
+                    {feature.title}
+                  </h3>
+                </div>
+                <p className="font-body text-sm text-cream-muted leading-relaxed pl-14">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-background rounded-sm p-8 border border-border">
+            <h3 className="font-display text-xl text-foreground mb-4">Key Capabilities</h3>
+            <ul className="space-y-2 font-body text-sm text-cream-muted">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-obsidian mt-1 flex-shrink-0" />
+                <span>Customised task requirements by site and zone</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-obsidian mt-1 flex-shrink-0" />
+                <span>Verified task completion with digital proof</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-obsidian mt-1 flex-shrink-0" />
+                <span>Real-time task updates and notifications</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-obsidian mt-1 flex-shrink-0" />
+                <span>Client access to dashboards showing completed tasks, service gaps, incident logs, and resolution timelines</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* HR, Safety & Compliance */}
+        <div className="max-w-4xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="w-12 h-12 rounded-sm bg-obsidian/10 flex items-center justify-center mb-6">
+                <Shield className="w-6 h-6 text-obsidian" />
+              </div>
+              <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
+                HR, Safety & Compliance
+              </h3>
+              <div className="space-y-4 font-body text-base text-cream-muted leading-relaxed">
+                <p>
+                  Obsidian Commercial partners with Peninsula, a leading Australian provider of 
+                  workplace relations and health and safety compliance support.
+                </p>
+                <p>
+                  This partnership ensures our employment practices, onboarding, WHS documentation, 
+                  and workplace policies align with Fair Work obligations and current legislation. 
+                  Peninsula provides proactive HR guidance, training, and real-time advice — reducing 
+                  risk and supporting a safe, compliant workplace.
+                </p>
+              </div>
             </div>
-            {/* Decorative Frame */}
-            <div className="absolute -top-4 -right-4 w-full h-full border border-gold/20 rounded-sm -z-10" />
+            <div className="bg-background rounded-sm p-8 border border-border">
+              <h4 className="font-display text-lg text-foreground mb-4">Compliance Coverage</h4>
+              <ul className="space-y-2 font-body text-sm text-cream-muted">
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-obsidian mt-1 flex-shrink-0" />
+                  <span>Fair Work compliance</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-obsidian mt-1 flex-shrink-0" />
+                  <span>WHS documentation and policies</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-obsidian mt-1 flex-shrink-0" />
+                  <span>Proactive HR guidance and training</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-obsidian mt-1 flex-shrink-0" />
+                  <span>Real-time compliance advice</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -85,4 +139,4 @@ const WhyObsidian = () => {
   );
 };
 
-export default WhyObsidian;
+export default Technology;

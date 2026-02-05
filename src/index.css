@@ -6,64 +6,64 @@
 
 @layer base {
   :root {
-    /* Obsidian Luxury Palette */
-    --background: 0 0% 4%;
-    --foreground: 40 20% 95%;
+    /* White Theme Palette - Inspired by Saint Haven */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
-    --card: 0 0% 7%;
-    --card-foreground: 40 20% 95%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 0 0% 7%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 38 35% 55%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 40 20% 90%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 40 10% 60%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 38 35% 55%;
-    --accent-foreground: 0 0% 4%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
-    --ring: 38 35% 55%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 10%;
 
     --radius: 0.25rem;
 
-    /* Custom Obsidian tokens */
-    --obsidian: 0 0% 4%;
-    --obsidian-light: 0 0% 8%;
-    --stone: 30 5% 25%;
-    --stone-light: 30 5% 40%;
-    --cream: 40 20% 95%;
-    --cream-muted: 40 10% 75%;
-    --gold: 38 35% 55%;
-    --gold-light: 38 40% 65%;
-    --charcoal: 0 0% 12%;
+    /* Custom Obsidian Commercial tokens - White Theme */
+    --obsidian: 0 0% 10%;
+    --obsidian-light: 0 0% 15%;
+    --stone: 0 0% 40%;
+    --stone-light: 0 0% 60%;
+    --cream: 0 0% 10%;
+    --cream-muted: 0 0% 45%;
+    --gold: 0 0% 10%;
+    --gold-light: 0 0% 20%;
+    --charcoal: 0 0% 95%;
 
     /* Typography */
     --font-display: 'Cormorant Garamond', serif;
     --font-body: 'Inter', sans-serif;
 
-    /* Shadows */
-    --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.3);
-    --shadow-glow: 0 0 60px rgba(178, 147, 91, 0.1);
+    /* Shadows - Lighter for white theme */
+    --shadow-soft: 0 4px 30px rgba(0, 0, 0, 0.08);
+    --shadow-glow: 0 0 60px rgba(0, 0, 0, 0.05);
 
-    --sidebar-background: 0 0% 6%;
-    --sidebar-foreground: 40 20% 95%;
-    --sidebar-primary: 38 35% 55%;
-    --sidebar-primary-foreground: 0 0% 4%;
-    --sidebar-accent: 0 0% 12%;
-    --sidebar-accent-foreground: 40 20% 90%;
-    --sidebar-border: 0 0% 18%;
-    --sidebar-ring: 38 35% 55%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 10%;
   }
 }
 
@@ -208,13 +208,13 @@
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - White theme */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--obsidian));
+  background: hsl(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
@@ -223,5 +223,5 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--gold) / 0.5);
+  background: hsl(var(--obsidian));
 }

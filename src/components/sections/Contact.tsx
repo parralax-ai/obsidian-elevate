@@ -49,20 +49,20 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-20 lg:py-32 bg-obsidian relative overflow-x-hidden w-full">
+    <section id="contact" className="py-16 sm:py-20 lg:py-32 bg-background relative overflow-x-hidden w-full">
       {/* Top Decorative Line */}
-      <div className="absolute top-0 left-1/2 w-px h-24 bg-gradient-to-b from-gold/40 to-transparent" />
+      <div className="absolute top-0 left-1/2 w-px h-24 bg-gradient-to-b from-obsidian/40 to-transparent" />
       
       <div className="w-full max-w-full mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 w-full">
           {/* Left Content */}
           <div className="w-full min-w-0">
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-gold mb-4 sm:mb-6">
-              Begin a Partnership
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-cream-muted mb-4 sm:mb-6">
+              Get in Touch
             </p>
-            <h2 className="font-display text-2xl sm:text-3xl lg:text-5xl font-light text-cream leading-tight mb-4 sm:mb-6">
-              Let's elevate your<br />
-              <span className="italic text-cream-muted">workplace experience</span>
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-5xl font-light text-foreground leading-tight mb-4 sm:mb-6">
+              Let's discuss your<br />
+              <span className="italic text-cream-muted">workplace needs</span>
             </h2>
             <p className="font-body text-sm sm:text-base text-cream-muted leading-relaxed mb-6 sm:mb-8 lg:mb-12 w-full">
               We approach every inquiry as the beginning of a potential partnership. 
@@ -73,20 +73,20 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-sm bg-gold/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-5 h-5 text-gold" />
+                <div className="w-10 h-10 rounded-sm bg-obsidian/10 flex items-center justify-center flex-shrink-0">
+                  <MapPin className="w-5 h-5 text-obsidian" />
                 </div>
                 <div>
-                  <p className="font-body text-sm text-cream">Melbourne, Victoria</p>
+                  <p className="font-body text-sm text-foreground">Melbourne, Victoria</p>
                   <p className="font-body text-xs text-cream-muted">Australia</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-sm bg-gold/10 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-gold" />
+                <div className="w-10 h-10 rounded-sm bg-obsidian/10 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-obsidian" />
                 </div>
                 <div>
-                  <p className="font-body text-sm text-cream">hello@obsidian.com.au</p>
+                  <p className="font-body text-sm text-foreground">hello@obsidian.com.au</p>
                   <p className="font-body text-xs text-cream-muted">We respond within 24 hours</p>
                 </div>
               </div>
@@ -94,7 +94,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-charcoal rounded-sm p-6 sm:p-8 lg:p-12 w-full min-w-0">
+          <div className="bg-card rounded-sm border border-border p-6 sm:p-8 lg:p-12 w-full min-w-0">
             <form onSubmit={handleSubmit} className="w-full">
               <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 w-full mb-4 sm:mb-6">
                 <div className="w-full">
@@ -105,7 +105,7 @@ const Contact = () => {
                     type="text" 
                     name="name"
                     required
-                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full"
+                    className="bg-background border-border text-foreground placeholder:text-cream-muted focus:border-obsidian transition-colors w-full"
                     placeholder="Full name"
                   />
                 </div>
@@ -117,7 +117,7 @@ const Contact = () => {
                     type="email" 
                     name="email"
                     required
-                    className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors w-full"
+                    className="bg-background border-border text-foreground placeholder:text-cream-muted focus:border-obsidian transition-colors w-full"
                     placeholder="you@company.com"
                   />
                 </div>
@@ -144,7 +144,7 @@ const Contact = () => {
                   name="message"
                   required
                   rows={4}
-                  className="bg-obsidian border-border text-cream placeholder:text-stone-light focus:border-gold transition-colors resize-none text-sm sm:text-base w-full"
+                      className="bg-background border-border text-foreground placeholder:text-cream-muted focus:border-obsidian transition-colors resize-none text-sm sm:text-base w-full"
                   placeholder="Tell us about your workplace and what you're looking for..."
                 />
               </div>

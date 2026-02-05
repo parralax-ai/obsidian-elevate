@@ -1,106 +1,132 @@
-import { MapPin } from 'lucide-react';
+import { MapPin, Users, Target, Eye } from 'lucide-react';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-obsidian-light">
+    <section id="about" className="py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-          {/* Brand Story */}
-          <div>
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-gold mb-6">
-              About Obsidian
+        {/* Who We Are */}
+        <div className="max-w-4xl mx-auto mb-24">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-cream-muted mb-6 text-center">
+            Who We Are
+          </p>
+          <h2 className="font-display text-3xl lg:text-5xl font-light text-foreground leading-tight mb-8 text-center">
+            Australian-Owned Commercial Cleaning & Facilities Management
+          </h2>
+          
+          <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed">
+            <p>
+              Obsidian Commercial specialises in commercial cleaning and integrated facilities 
+              management, supporting clients across a wide range of industries. Proudly 
+              Australian-owned, we bring hands-on experience, flexibility, and a genuine 
+              commitment to quality across every site we manage.
             </p>
-            <h2 className="font-display text-3xl lg:text-5xl font-light text-cream leading-tight mb-8">
-              Built on the belief that<br />
-              <span className="italic text-cream-muted">workplaces matter</span>
-            </h2>
-            
-            <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed">
-              <p>
-                Obsidian was founded with a singular vision: to transform how 
-                organisations think about their workplace environments. We believe 
-                that the spaces where people work should inspire, not merely function.
-              </p>
-              <p>
-                In an era where attracting talent back to the office is a genuine 
-                challenge, the quality of the workplace experience has never mattered 
-                more. Obsidian exists to help forward-thinking organisations meet 
-                this moment.
-              </p>
-              <p>
-                We are not a cleaning company in the traditional sense. We are a 
-                workplace experience partner - integrating precision service with 
-                thoughtful touches that make employees want to be in the office.
-              </p>
-            </div>
+            <p>
+              Our teams deliver daily cleaning, hygiene services, waste management, specialist 
+              cleaning, project-based works, and workplace experience enhancements. Every 
+              service is designed around consistency, accountability, and care; ensuring spaces 
+              are safe, functional, and professionally presented.
+            </p>
+            <p>
+              We operate across metropolitan and regional Australia, supported by a strong 
+              operational structure, experienced leadership, and a culture of continuous improvement.
+            </p>
+          </div>
+        </div>
 
-            {/* Philosophy Points */}
-            <div className="mt-12 grid grid-cols-2 gap-6">
-              {[
-                { label: 'Precision', value: 'In every detail' },
-                { label: 'Consistency', value: 'Every single day' },
-                { label: 'Discretion', value: 'Seamless presence' },
-                { label: 'Partnership', value: 'Long-term alignment' },
-              ].map((item, index) => (
-                <div key={index} className="py-4 border-t border-border">
-                  <p className="font-body text-xs tracking-[0.2em] uppercase text-gold mb-1">
-                    {item.label}
-                  </p>
-                  <p className="font-display text-lg text-cream">
-                    {item.value}
-                  </p>
-                </div>
-              ))}
+        {/* Mission & Vision */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-24">
+          <div className="bg-card rounded-sm p-8 lg:p-12 border border-border">
+            <div className="w-12 h-12 rounded-sm bg-obsidian/10 flex items-center justify-center mb-6">
+              <Target className="w-6 h-6 text-obsidian" />
             </div>
+            <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
+              Our Mission
+            </h3>
+            <p className="font-body text-base text-cream-muted leading-relaxed">
+              To deliver premium, people-focused facility and wellness solutions that go beyond 
+              cleaning; building safe, inspiring, and sustainable spaces that strengthen 
+              partnerships and help communities thrive.
+            </p>
           </div>
 
-          {/* Founder Section */}
-          <div className="lg:pl-8">
-            <div className="bg-charcoal rounded-sm p-8 lg:p-12">
-              <p className="font-body text-xs tracking-[0.3em] uppercase text-gold mb-8">
-                Leadership
-              </p>
-              
-              {/* Founder Info */}
-              <div className="mb-8">
-                <h3 className="font-display text-2xl lg:text-3xl text-cream mb-2">
-                  Shane Ali
-                </h3>
-                <p className="font-body text-sm text-cream-muted tracking-wider uppercase">
-                  Founder
-                </p>
-              </div>
-
-              <div className="space-y-4 font-body text-base text-cream-muted leading-relaxed mb-8">
-                <p>
-                  Shane founded Obsidian with a clear conviction: that Melbourne's 
-                  most discerning organisations deserve a workplace partner that 
-                  matches their own standards of excellence.
-                </p>
-                <p>
-                  With deep experience in premium service delivery and a commitment 
-                  to building genuine partnerships, Shane leads Obsidian with a 
-                  hands-on approach that ensures every client relationship reflects 
-                  the company's founding principles.
-                </p>
-              </div>
-
-              {/* Quote */}
-              <blockquote className="border-l-2 border-gold pl-6 my-8">
-                <p className="font-display text-lg italic text-cream leading-relaxed">
-                  "Excellence isn't a service level - it's a standard we maintain 
-                  every single day, in every single space."
-                </p>
-              </blockquote>
-
-              {/* Location */}
-              <div className="flex items-center gap-3 pt-8 border-t border-border">
-                <MapPin className="w-4 h-4 text-gold" />
-                <p className="font-body text-sm text-cream-muted">
-                  Melbourne, Victoria, Australia
-                </p>
-              </div>
+          <div className="bg-card rounded-sm p-8 lg:p-12 border border-border">
+            <div className="w-12 h-12 rounded-sm bg-obsidian/10 flex items-center justify-center mb-6">
+              <Eye className="w-6 h-6 text-obsidian" />
             </div>
+            <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
+              Our Vision
+            </h3>
+            <p className="font-body text-base text-cream-muted leading-relaxed">
+              To redefine facilities management by integrating cleaning, care, and wellbeing; 
+              becoming the trusted partner for organisations seeking high-performing workplaces 
+              where people connect and thrive.
+            </p>
+          </div>
+        </div>
+
+        {/* Leadership & Culture */}
+        <div className="max-w-4xl mx-auto">
+          <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-8 text-center">
+            Leadership & Culture
+          </h3>
+          <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed mb-12">
+            <p>
+              Obsidian Commercial is led by founders and directors Dominic Grech and Shane Ali, 
+              supported by an experienced operational team.
+            </p>
+            <p>
+              With over 15 years of industry experience, 30+ engaged employees, more than 4,500 
+              site visits annually, and 95+ active clients, our leadership team brings a practical, 
+              hands-on approach to service delivery.
+            </p>
+            <p>
+              Our flat operational structure enables responsiveness, transparency, and accountability, 
+              ensuring every client relationship is supported with clarity and care.
+            </p>
+          </div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            <div className="text-center">
+              <div className="font-display text-4xl lg:text-5xl text-foreground mb-2">15+</div>
+              <p className="font-body text-sm text-cream-muted">Years Experience</p>
+            </div>
+            <div className="text-center">
+              <div className="font-display text-4xl lg:text-5xl text-foreground mb-2">30+</div>
+              <p className="font-body text-sm text-cream-muted">Employees</p>
+            </div>
+            <div className="text-center">
+              <div className="font-display text-4xl lg:text-5xl text-foreground mb-2">4,500+</div>
+              <p className="font-body text-sm text-cream-muted">Site Visits/Year</p>
+            </div>
+            <div className="text-center">
+              <div className="font-display text-4xl lg:text-5xl text-foreground mb-2">95+</div>
+              <p className="font-body text-sm text-cream-muted">Active Clients</p>
+            </div>
+          </div>
+        </div>
+
+        {/* What Sets Us Apart */}
+        <div className="mt-24 max-w-4xl mx-auto">
+          <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-8 text-center">
+            What Sets Us Apart
+          </h3>
+          <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed">
+            <p>
+              In a competitive cleaning and facilities industry, Obsidian Commercial stands apart 
+              through a combination of personalised service, technology-led delivery, and a 
+              people-first mindset.
+            </p>
+            <p>
+              Unlike traditional contractors focused solely on volume and routine tasks, we operate 
+              as a strategic facilities partner; responsive, digitally enabled, and experience-driven. 
+              Our services are designed to reduce friction within the workplace, creating order, 
+              consistency, and confidence for the people who use the space every day.
+            </p>
+            <p>
+              By combining strong service values with modern systems and transparency, we deliver 
+              smarter, safer, and more reliable outcomes across every site we manage.
+            </p>
           </div>
         </div>
       </div>
