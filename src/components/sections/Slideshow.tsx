@@ -66,61 +66,58 @@ const Slideshow = () => {
         ))}
       </div>
 
-      {/* Slide Indicators - Responsive for iPhone */}
-      <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex gap-2 sm:gap-3 z-10">
+      {/* Slide Indicators - Saint Haven style minimal */}
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`h-1 sm:h-1.5 transition-all duration-500 rounded-full touch-target ${
+            className={`h-0.5 sm:h-1 transition-all duration-300 rounded-full ${
               index === currentIndex
-                ? 'w-8 sm:w-12 bg-obsidian'
-                : 'w-1 sm:w-1.5 bg-obsidian/30 hover:bg-obsidian/50 active:bg-obsidian/50'
+                ? 'w-6 sm:w-8 bg-foreground/60'
+                : 'w-1 sm:w-1.5 bg-foreground/20 hover:bg-foreground/30'
             }`}
             aria-label={`Go to slide ${index + 1}`}
-            style={{ minWidth: '44px', minHeight: '44px' }} // iOS touch target size
           />
         ))}
       </div>
 
-      {/* Navigation Arrows - Responsive for iPhone */}
+      {/* Navigation Arrows - Saint Haven style minimal */}
       <button
         onClick={() => setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length)}
-        className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-background/30 backdrop-blur-md hover:bg-background/40 active:bg-background/40 transition-all duration-300 rounded-full border border-obsidian/10 hover:border-obsidian/20 group touch-target"
+        className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-foreground/40 hover:text-foreground/60 transition-colors duration-300 group"
         aria-label="Previous slide"
-        style={{ minWidth: '44px', minHeight: '44px' }} // iOS touch target size
       >
         <svg
-          className="w-5 h-5 sm:w-7 sm:h-7 text-foreground group-hover:scale-110 transition-transform duration-300"
+          className="w-4 h-4 sm:w-5 sm:h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
+          strokeWidth={1.5}
         >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={2}
-            d="M15 19l-7-7 7-7"
+            d="M15.75 19.5L8.25 12l7.5-7.5"
           />
         </svg>
       </button>
       <button
         onClick={() => setCurrentIndex((prev) => (prev + 1) % slides.length)}
-        className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-background/30 backdrop-blur-md hover:bg-background/40 active:bg-background/40 transition-all duration-300 rounded-full border border-obsidian/10 hover:border-obsidian/20 group touch-target"
+        className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-foreground/40 hover:text-foreground/60 transition-colors duration-300 group"
         aria-label="Next slide"
-        style={{ minWidth: '44px', minHeight: '44px' }} // iOS touch target size
       >
         <svg
-          className="w-5 h-5 sm:w-7 sm:h-7 text-foreground group-hover:scale-110 transition-transform duration-300"
+          className="w-4 h-4 sm:w-5 sm:h-5"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
+          strokeWidth={1.5}
         >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 5l7 7-7 7"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5"
           />
         </svg>
       </button>

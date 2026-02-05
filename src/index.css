@@ -229,6 +229,12 @@
   }
 }
 
+/* Saint Haven style minimal buttons */
+.touch-target {
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
 /* Custom scrollbar - White theme */
 ::-webkit-scrollbar {
   width: 6px;

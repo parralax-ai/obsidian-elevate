@@ -12,24 +12,32 @@ const Footer = () => {
               <div 
                 className="relative h-10 w-10 flex-shrink-0 rounded-sm overflow-hidden"
                 style={{
-                  background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%)',
-                  boxShadow: 'inset 0 1px 2px rgba(255, 255, 255, 0.1), 0 2px 8px rgba(0, 0, 0, 0.3)',
+                  background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #0d0d0d 50%, #1a1a1a 75%, #000000 100%)',
+                  boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.15), inset 0 -2px 4px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4)',
+                  border: '1px solid rgba(255, 255, 255, 0.05)',
                 }}
               >
-                {/* Shine effect */}
+                {/* Obsidian texture - multiple layers */}
                 <div 
-                  className="absolute inset-0 opacity-30"
+                  className="absolute inset-0 opacity-40"
                   style={{
-                    background: 'linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.3) 45%, rgba(255, 255, 255, 0.1) 50%, transparent 100%)',
-                    transform: 'translateX(-100%) translateY(-100%)',
-                    animation: 'shine 3s infinite',
+                    background: 'radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 40%)',
                   }}
                 />
-                {/* Obsidian texture overlay */}
+                {/* Shine effect */}
                 <div 
-                  className="absolute inset-0 opacity-20"
+                  className="absolute inset-0 opacity-50"
                   style={{
-                    backgroundImage: 'radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%)',
+                    background: 'linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 0.2) 50%, transparent 60%)',
+                    transform: 'translateX(-100%) translateY(-100%)',
+                    animation: 'shine 4s infinite',
+                  }}
+                />
+                {/* Glassy reflection */}
+                <div 
+                  className="absolute top-0 left-0 right-0 h-1/3 opacity-30"
+                  style={{
+                    background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent)',
                   }}
                 />
               </div>
