@@ -6,7 +6,7 @@ import Footer from '@/components/layout/Footer';
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background w-full max-w-full overflow-x-hidden">
+    <main className="bg-background w-full overflow-x-hidden">
       <Navigation />
       <Slideshow />
       <Hero />

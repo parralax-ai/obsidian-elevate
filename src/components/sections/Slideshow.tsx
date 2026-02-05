@@ -71,7 +71,7 @@ const Slideshow = () => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
+    <section className="relative h-screen w-full overflow-hidden" style={{ position: 'relative' }}>
       {/* Slides Container with smooth horizontal sliding effect */}
       <div className="relative h-full w-full" style={{ overflow: 'hidden' }}>
         <div
