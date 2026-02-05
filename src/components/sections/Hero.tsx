@@ -1,5 +1,7 @@
 import { Button } from '@/components/ui/button';
-import heroImage from '@/assets/hero-office.jpg';
+
+// High-resolution 4K office image
+const heroImage = 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=3840&q=90&auto=format';
 
 const spiritualQuotes = [
   "How we maintain our spaces mirrors how we value our people.",
@@ -18,8 +20,9 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Premium executive office interior"
+          alt="Premium executive office interior with modern design"
           className="w-full h-full object-cover opacity-20"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
       </div>

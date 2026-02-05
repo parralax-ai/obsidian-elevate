@@ -1,20 +1,31 @@
 import { useState, useEffect } from 'react';
-import heroImage from '@/assets/hero-office.jpg';
-import meetingRoomImage from '@/assets/meeting-room.jpg';
-import detailImage from '@/assets/detail-surfaces.jpg';
 
+// High-resolution 4K corporate office images
+// Using Unsplash direct links with 4K resolution (3840px width) and high quality
 const slides = [
   {
-    image: heroImage,
-    alt: 'Premium executive office interior',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=3840&q=95&auto=format&fit=crop',
+    alt: 'Modern corporate office reception with warm wood tones, gold accents, and contemporary design',
   },
   {
-    image: meetingRoomImage,
-    alt: 'Professional meeting room',
+    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=3840&q=95&auto=format&fit=crop',
+    alt: 'Spacious open-plan office workspace with natural light and modern furniture',
   },
   {
-    image: detailImage,
-    alt: 'Immaculate office surfaces',
+    image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?w=3840&q=95&auto=format&fit=crop',
+    alt: 'Professional executive office with modern furniture and clean minimalist design',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=3840&q=95&auto=format&fit=crop',
+    alt: 'Contemporary office space with glass partitions, collaborative areas, and natural lighting',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=3840&q=95&auto=format&fit=crop',
+    alt: 'Elegant corporate workspace with premium finishes and sophisticated design',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=3840&q=95&auto=format&fit=crop',
+    alt: 'Industrial-chic office space with high ceilings and modern collaborative work areas',
   },
 ];
 
@@ -52,6 +63,8 @@ const Slideshow = () => {
               style={{
                 objectPosition: 'center',
               }}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              fetchPriority={index === 0 ? 'high' : 'low'}
             />
             <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/15 to-background/40" />
           </div>
