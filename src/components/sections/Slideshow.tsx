@@ -31,44 +31,99 @@ const slides = [
 
 const Slideshow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 6000); // Change slide every 6 seconds for smoother experience
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % slides.length);
+        setIsTransitioning(false);
+      }, 500);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
 
+  const goToSlide = (index: number) => {
+    if (index === currentIndex) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setIsTransitioning(false);
+    }, 500);
+  };
+
+  const goToPrevious = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+      setIsTransitioning(false);
+    }, 500);
+  };
+
+  const goToNext = () => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+      setIsTransitioning(false);
+    }, 500);
+  };
+
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Slides Container */}
-      <div className="relative h-full w-full">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-all duration-[2000ms] ease-in-out ${
-              index === currentIndex 
-                ? 'opacity-100 scale-100' 
-                : 'opacity-0 scale-105'
-            }`}
-            style={{
-              transition: 'opacity 2s ease-in-out, transform 2s ease-in-out',
-            }}
-          >
-            <img
-              src={slide.image}
-              alt={slide.alt}
-              className="w-full h-full object-cover"
+      {/* Slides Container with smooth horizontal sliding effect */}
+      <div className="relative h-full w-full" style={{ overflow: 'hidden' }}>
+        <div
+          className="flex h-full transition-transform duration-1000 ease-in-out"
+          style={{
+            transform: `translateX(-${currentIndex * 100}%)`,
+            width: `${slides.length * 100}%`,
+          }}
+        >
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className="relative h-full"
               style={{
-                objectPosition: 'center',
+                width: `${100 / slides.length}%`,
+                flexShrink: 0,
               }}
-              loading={index === 0 ? 'eager' : 'lazy'}
-              fetchPriority={index === 0 ? 'high' : 'low'}
+            >
+              <img
+                src={slide.image}
+                alt={slide.alt}
+                className="w-full h-full object-cover"
+                style={{
+                  objectPosition: 'center',
+                }}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                fetchPriority={index === 0 ? 'high' : 'low'}
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/15 to-background/40" />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <div className="flex flex-col items-center gap-2">
+          <span className="font-body text-xs text-foreground/70 uppercase tracking-wider">Scroll</span>
+          <svg
+            className="w-6 h-6 text-foreground/70"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/15 to-background/40" />
-          </div>
-        ))}
+          </svg>
+        </div>
       </div>
 
       {/* Slide Indicators */}
@@ -76,7 +131,7 @@ const Slideshow = () => {
         {slides.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => goToSlide(index)}
             className={`h-1.5 transition-all duration-500 rounded-full ${
               index === currentIndex
                 ? 'w-12 bg-obsidian'
@@ -89,7 +144,7 @@ const Slideshow = () => {
 
       {/* Navigation Arrows */}
       <button
-        onClick={() => setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length)}
+        onClick={goToPrevious}
         className="absolute left-8 top-1/2 -translate-y-1/2 z-10 w-14 h-14 flex items-center justify-center bg-background/30 backdrop-blur-md hover:bg-background/40 transition-all duration-300 rounded-full border border-obsidian/10 hover:border-obsidian/20 group"
         aria-label="Previous slide"
       >
@@ -108,7 +163,7 @@ const Slideshow = () => {
         </svg>
       </button>
       <button
-        onClick={() => setCurrentIndex((prev) => (prev + 1) % slides.length)}
+        onClick={goToNext}
         className="absolute right-8 top-1/2 -translate-y-1/2 z-10 w-14 h-14 flex items-center justify-center bg-background/30 backdrop-blur-md hover:bg-background/40 transition-all duration-300 rounded-full border border-obsidian/10 hover:border-obsidian/20 group"
         aria-label="Next slide"
       >
