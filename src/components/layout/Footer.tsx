@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import obsidianLogo from '@/assets/obsidian-logo.png';
 
 const Footer = () => {
@@ -33,19 +34,19 @@ const Footer = () => {
             </h4>
             <nav className="flex flex-col gap-3">
               {[
-                { href: '#about', label: 'About' },
-                { href: '#services', label: 'Services' },
-                { href: '#technology', label: 'Technology' },
-                { href: '#experience', label: 'Experience' },
-                { href: '#contact', label: 'Contact' },
+                { href: '/about', label: 'About' },
+                { href: '/services', label: 'Services' },
+                { href: '/technology', label: 'Technology' },
+                { href: '/experience', label: 'Experience' },
+                { href: '/#contact', label: 'Contact' },
               ].map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   className="font-body text-sm text-cream-muted hover:text-foreground transition-colors duration-300"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>

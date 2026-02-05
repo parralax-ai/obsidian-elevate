@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
 import obsidianLogo from '@/assets/obsidian-logo.png';
@@ -16,10 +17,10 @@ const Navigation = () => {
   }, []);
 
   const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#technology', label: 'Technology' },
-    { href: '#experience', label: 'Experience' },
+    { href: '/about', label: 'About' },
+    { href: '/services', label: 'Services' },
+    { href: '/technology', label: 'Technology' },
+    { href: '/experience', label: 'Experience' },
   ];
 
   const shouldBlur = isScrolled || isMobileMenuOpen;
@@ -40,8 +41,8 @@ const Navigation = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
-          <a 
-            href="#" 
+          <Link 
+            to="/" 
             className="font-display text-2xl lg:text-3xl tracking-[0.3em] text-foreground uppercase flex items-center gap-3 hover:opacity-90 transition-opacity duration-300"
           >
             <img 
@@ -51,21 +52,21 @@ const Navigation = () => {
               style={{ display: 'block' }}
             />
             Obsidian Commercial
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-12">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className="font-body text-xs tracking-[0.2em] uppercase text-cream-muted hover:text-foreground transition-colors duration-300"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Button variant="luxuryOutline" size="sm" asChild>
-              <a href="#contact">Get in Touch</a>
+              <Link to="/#contact">Get in Touch</Link>
             </Button>
           </div>
 
@@ -91,19 +92,19 @@ const Navigation = () => {
           >
             <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   className="font-body text-sm tracking-[0.15em] uppercase text-cream-muted hover:text-foreground transition-colors duration-300"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
               <Button variant="luxuryOutline" size="lg" className="mt-4" asChild>
-                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link to="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
                   Get in Touch
-                </a>
+                </Link>
               </Button>
             </div>
           </div>
