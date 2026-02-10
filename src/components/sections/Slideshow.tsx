@@ -68,7 +68,6 @@ const Slideshow = () => {
               loading={index === 0 ? 'eager' : 'lazy'}
               fetchPriority={index === 0 ? 'high' : 'low'}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/15 to-background/40" />
           </div>
         ))}
       </div>

@@ -21,10 +21,10 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Premium executive office interior with modern design"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-40"
           loading="lazy"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/70" />
       </div>
 
       {/* Content */}
