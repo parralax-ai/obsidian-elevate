@@ -30,25 +30,25 @@ const Slideshow = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    }, 10000); // Slower auto-advance - 10 seconds
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="relative h-screen sm:h-screen md:h-screen w-full overflow-hidden">
+    <section className="relative h-screen sm:h-screen md:h-screen w-full overflow-hidden" style={{ zIndex: 1 }}>
       {/* Slides Container */}
       <div className="relative h-full w-full">
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-all duration-[2000ms] ease-in-out ${
+            className={`absolute inset-0 transition-all duration-[5000ms] ease-in-out ${
               index === currentIndex 
                 ? 'opacity-100 scale-100' 
                 : 'opacity-0 scale-105'
             }`}
             style={{
-              transition: 'opacity 2s ease-in-out, transform 2s ease-in-out',
+              transition: 'opacity 5s ease-in-out, transform 5s ease-in-out',
             }}
           >
             <img
@@ -67,7 +67,7 @@ const Slideshow = () => {
       </div>
 
       {/* Slide Indicators - Saint Haven style minimal */}
-      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-10">
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-20">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -85,7 +85,7 @@ const Slideshow = () => {
       {/* Navigation Arrows - Saint Haven style minimal */}
       <button
         onClick={() => setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length)}
-        className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-foreground/40 hover:text-foreground/60 transition-colors duration-300 group"
+        className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-foreground/40 hover:text-foreground/60 transition-colors duration-300 group"
         aria-label="Previous slide"
       >
         <svg
@@ -104,7 +104,7 @@ const Slideshow = () => {
       </button>
       <button
         onClick={() => setCurrentIndex((prev) => (prev + 1) % slides.length)}
-        className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-foreground/40 hover:text-foreground/60 transition-colors duration-300 group"
+        className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-foreground/40 hover:text-foreground/60 transition-colors duration-300 group"
         aria-label="Next slide"
       >
         <svg
