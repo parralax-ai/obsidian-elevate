@@ -36,7 +36,7 @@ const Slideshow = () => {
   }, []);
 
   return (
-    <section className="relative h-screen sm:h-screen md:h-screen w-full overflow-hidden" style={{ zIndex: 1 }}>
+    <section className="relative w-full overflow-hidden" style={{ zIndex: 1, paddingTop: '80px', height: 'calc(100vh - 80px)' }}>
       {/* Slides Container */}
       <div className="relative h-full w-full">
         {slides.map((slide, index) => (
