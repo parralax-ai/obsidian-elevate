@@ -64,16 +64,91 @@ const About = () => {
           </div>
         </div>
 
+        {/* Co-Founders Section */}
+        <div className="max-w-6xl mx-auto mb-24">
+          <p className="font-body text-xs tracking-[0.3em] uppercase text-cream-muted mb-6 text-center">
+            Our Founders
+          </p>
+          <h3 className="font-display text-3xl lg:text-4xl font-light text-foreground mb-12 text-center">
+            Co-Founders & Directors
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+            {/* Dom */}
+            <div className="bg-card rounded-sm p-8 lg:p-12 border border-border">
+              <div className="aspect-[3/4] w-full max-w-xs mx-auto mb-8 rounded-sm overflow-hidden bg-background">
+                {/* Placeholder for Dom's photo - user should add dom-photo.jpg to assets */}
+                <div className="w-full h-full bg-gradient-to-br from-background to-card flex items-center justify-center">
+                  <span className="font-body text-sm text-cream-muted">Dom Photo</span>
+                </div>
+                {/* Uncomment when photo is added:
+                <img 
+                  src={domPhoto} 
+                  alt="Dominic Grech, Co-Founder" 
+                  className="w-full h-full object-cover"
+                />
+                */}
+              </div>
+              <h4 className="font-display text-2xl lg:text-3xl text-foreground mb-3 text-center">
+                Dominic Grech
+              </h4>
+              <p className="font-body text-sm text-cream-muted tracking-wider uppercase text-center mb-6">
+                Co-Founder & Director
+              </p>
+              <p className="font-body text-base text-cream-muted leading-relaxed text-center">
+                Dom brings extensive experience in commercial cleaning to Obsidian Commercial. 
+                His hands-on background in the industry, combined with a deep understanding of 
+                operational excellence, drives our commitment to delivering exceptional service 
+                standards across every site we manage.
+              </p>
+            </div>
+
+            {/* Shane */}
+            <div className="bg-card rounded-sm p-8 lg:p-12 border border-border">
+              <div className="aspect-[3/4] w-full max-w-xs mx-auto mb-8 rounded-sm overflow-hidden bg-background">
+                {/* Placeholder for Shane's photo - user should add shane-photo.jpg to assets */}
+                <div className="w-full h-full bg-gradient-to-br from-background to-card flex items-center justify-center">
+                  <span className="font-body text-sm text-cream-muted">Shane Photo</span>
+                </div>
+                {/* Uncomment when photo is added:
+                <img 
+                  src={shanePhoto} 
+                  alt="Shane Ali, Co-Founder" 
+                  className="w-full h-full object-cover"
+                />
+                */}
+              </div>
+              <h4 className="font-display text-2xl lg:text-3xl text-foreground mb-3 text-center">
+                Shane Ali
+              </h4>
+              <p className="font-body text-sm text-cream-muted tracking-wider uppercase text-center mb-6">
+                Co-Founder & Director
+              </p>
+              <p className="font-body text-base text-cream-muted leading-relaxed text-center">
+                Shane's background in legal costing brings a unique perspective to Obsidian Commercial. 
+                With a vision to bring people back into the office, he understands that exceptional 
+                workplace experiences are fundamental to attracting and retaining talent. His dedication 
+                to creating spaces that inspire and engage drives our mission forward.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="font-body text-base text-cream-muted leading-relaxed max-w-3xl mx-auto">
+              Together, Dom and Shane are dedicated to transforming how organisations think about 
+              their workplace environments. Their combined expertise and shared commitment to excellence 
+              form the foundation of Obsidian Commercial's approach to commercial cleaning and 
+              facilities management.
+            </p>
+          </div>
+        </div>
+
         {/* Leadership & Culture */}
         <div className="max-w-4xl mx-auto">
           <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-8 text-center">
             Leadership & Culture
           </h3>
           <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed mb-12">
-            <p>
-              Obsidian Commercial is led by founders and directors Dominic Grech and Shane Ali, 
-              supported by an experienced operational team.
-            </p>
             <p>
               With over 15 years of industry experience, 30+ engaged employees, more than 4,500 
               site visits annually, and 95+ active clients, our leadership team brings a practical, 

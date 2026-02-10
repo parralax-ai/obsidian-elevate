@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import obsidianLogo from '@/assets/obsidian-logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,39 +45,12 @@ const Navigation = () => {
             to="/" 
             className="font-display text-2xl lg:text-3xl tracking-[0.3em] text-foreground uppercase flex items-center gap-3 hover:opacity-90 transition-opacity duration-300"
           >
-            {/* Obsidian Logo with Shine */}
-            <div 
-              className="relative h-8 w-8 lg:h-10 lg:w-10 flex-shrink-0 rounded-sm overflow-hidden"
-              style={{
-                background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 25%, #0d0d0d 50%, #1a1a1a 75%, #000000 100%)',
-                boxShadow: 'inset 0 2px 4px rgba(255, 255, 255, 0.15), inset 0 -2px 4px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.4)',
-                border: '1px solid rgba(255, 255, 255, 0.05)',
-              }}
-            >
-              {/* Obsidian texture - multiple layers */}
-              <div 
-                className="absolute inset-0 opacity-40"
-                style={{
-                  background: 'radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 40%), radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 40%)',
-                }}
-              />
-              {/* Shine effect */}
-              <div 
-                className="absolute inset-0 opacity-50"
-                style={{
-                  background: 'linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 0.2) 50%, transparent 60%)',
-                  transform: 'translateX(-100%) translateY(-100%)',
-                  animation: 'shine 4s infinite',
-                }}
-              />
-              {/* Glassy reflection */}
-              <div 
-                className="absolute top-0 left-0 right-0 h-1/3 opacity-30"
-                style={{
-                  background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0.3), transparent)',
-                }}
-              />
-            </div>
+            <img 
+              src={obsidianLogo} 
+              alt="Obsidian Commercial Logo" 
+              className="h-8 w-8 lg:h-10 lg:w-10 object-contain flex-shrink-0"
+              style={{ display: 'block' }}
+            />
             Obsidian Commercial
           </Link>
 
