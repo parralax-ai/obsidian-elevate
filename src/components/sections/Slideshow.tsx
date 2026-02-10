@@ -40,6 +40,7 @@ const Slideshow = () => {
       className="relative w-full overflow-hidden pt-20 lg:pt-24" 
       style={{ 
         zIndex: 1, 
+        minHeight: 'calc(100vh - 5rem)',
         height: 'calc(100vh - 5rem)',
       }}
     >
