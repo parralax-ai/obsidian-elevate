@@ -36,7 +36,13 @@ const Slideshow = () => {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ zIndex: 1, paddingTop: '80px', height: 'calc(100vh - 80px)' }}>
+    <section 
+      className="relative w-full overflow-hidden pt-20 lg:pt-24" 
+      style={{ 
+        zIndex: 1, 
+        height: 'calc(100vh - 5rem)',
+      }}
+    >
       {/* Slides Container */}
       <div className="relative h-full w-full">
         {slides.map((slide, index) => (
