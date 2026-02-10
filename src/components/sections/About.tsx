@@ -1,4 +1,7 @@
 import { MapPin, Users, Target, Eye } from 'lucide-react';
+import domPhoto from '@/assets/dom-photo.jpg';
+import shanePhoto from '@/assets/shane-photo.jpg';
+import togetherPhoto from '@/assets/together.jpg';
 
 const About = () => {
   return (
@@ -73,21 +76,26 @@ const About = () => {
             Co-Founders & Directors
           </h3>
           
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
+          {/* Together Photo */}
+          <div className="mb-16 max-w-2xl mx-auto">
+            <div className="aspect-[4/3] w-full rounded-sm overflow-hidden bg-background">
+              <img 
+                src={togetherPhoto} 
+                alt="Dominic Grech and Shane Ali, Co-Founders of Obsidian Commercial" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 mb-12">
             {/* Dom */}
             <div className="bg-card rounded-sm p-8 lg:p-12 border border-border">
               <div className="aspect-[3/4] w-full max-w-xs mx-auto mb-8 rounded-sm overflow-hidden bg-background">
-                {/* Placeholder for Dom's photo - user should add dom-photo.jpg to assets */}
-                <div className="w-full h-full bg-gradient-to-br from-background to-card flex items-center justify-center">
-                  <span className="font-body text-sm text-cream-muted">Dom Photo</span>
-                </div>
-                {/* Uncomment when photo is added:
                 <img 
                   src={domPhoto} 
                   alt="Dominic Grech, Co-Founder" 
                   className="w-full h-full object-cover"
                 />
-                */}
               </div>
               <h4 className="font-display text-2xl lg:text-3xl text-foreground mb-3 text-center">
                 Dominic Grech
@@ -106,17 +114,11 @@ const About = () => {
             {/* Shane */}
             <div className="bg-card rounded-sm p-8 lg:p-12 border border-border">
               <div className="aspect-[3/4] w-full max-w-xs mx-auto mb-8 rounded-sm overflow-hidden bg-background">
-                {/* Placeholder for Shane's photo - user should add shane-photo.jpg to assets */}
-                <div className="w-full h-full bg-gradient-to-br from-background to-card flex items-center justify-center">
-                  <span className="font-body text-sm text-cream-muted">Shane Photo</span>
-                </div>
-                {/* Uncomment when photo is added:
                 <img 
                   src={shanePhoto} 
                   alt="Shane Ali, Co-Founder" 
                   className="w-full h-full object-cover"
                 />
-                */}
               </div>
               <h4 className="font-display text-2xl lg:text-3xl text-foreground mb-3 text-center">
                 Shane Ali
@@ -133,7 +135,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="text-center">
             <p className="font-body text-base text-cream-muted leading-relaxed max-w-3xl mx-auto">
               Together, Dom and Shane are dedicated to transforming how organisations think about 
               their workplace environments. Their combined expertise and shared commitment to excellence 
