@@ -49,9 +49,9 @@ const Navigation = () => {
               src={obsidianLogo} 
               alt="Obsidian Commercial Logo" 
               className="h-20 w-20 lg:h-24 lg:w-24 object-contain flex-shrink-0"
-              style={{ display: 'block' }}
+              style={{ display: 'block', alignSelf: 'center' }}
             />
-            Obsidian Commercial
+            <span className="leading-none">Obsidian Commercial</span>
           </Link>
 
           {/* Desktop Navigation */}

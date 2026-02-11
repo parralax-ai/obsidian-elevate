@@ -30,7 +30,7 @@ const Slideshow = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 10000); // Slower auto-advance - 10 seconds
+    }, 15000); // Longer display time - 15 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -88,18 +88,18 @@ const Slideshow = () => {
         ))}
       </div>
 
-      {/* Navigation Arrows - Saint Haven style minimal */}
+      {/* Navigation Arrows - More visible */}
       <button
         onClick={() => setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length)}
-        className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-foreground/40 hover:text-foreground/60 transition-colors duration-300 group"
+        className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-background/50 backdrop-blur-sm hover:bg-background/70 text-foreground/80 hover:text-foreground transition-all duration-300 group rounded-full border border-foreground/20 hover:border-foreground/40"
         aria-label="Previous slide"
       >
         <svg
-          className="w-4 h-4 sm:w-5 sm:h-5"
+          className="w-6 h-6 sm:w-7 sm:h-7"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
-          strokeWidth={1.5}
+          strokeWidth={2}
         >
           <path
             strokeLinecap="round"
@@ -110,15 +110,15 @@ const Slideshow = () => {
       </button>
       <button
         onClick={() => setCurrentIndex((prev) => (prev + 1) % slides.length)}
-        className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-foreground/40 hover:text-foreground/60 transition-colors duration-300 group"
+        className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-background/50 backdrop-blur-sm hover:bg-background/70 text-foreground/80 hover:text-foreground transition-all duration-300 group rounded-full border border-foreground/20 hover:border-foreground/40"
         aria-label="Next slide"
       >
         <svg
-          className="w-4 h-4 sm:w-5 sm:h-5"
+          className="w-6 h-6 sm:w-7 sm:h-7"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
-          strokeWidth={1.5}
+          strokeWidth={2}
         >
           <path
             strokeLinecap="round"
