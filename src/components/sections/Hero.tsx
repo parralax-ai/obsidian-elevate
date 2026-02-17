@@ -15,7 +15,7 @@ const Hero = () => {
   const currentQuote = spiritualQuotes[Math.floor(Math.random() * spiritualQuotes.length)];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
+    <section id="hero-content" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Background Image with white overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -25,6 +25,7 @@ const Hero = () => {
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/70" />
+        <div className="absolute inset-0 metallic-gradient opacity-20" />
       </div>
 
       {/* Content */}

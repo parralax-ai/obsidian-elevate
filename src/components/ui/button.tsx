@@ -17,7 +17,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         // Obsidian Commercial variants - White theme
         luxury: "bg-obsidian text-background hover:bg-obsidian-light font-medium tracking-widest rounded-sm",
-        luxuryOutline: "border border-obsidian/40 bg-transparent text-foreground hover:bg-obsidian/10 hover:border-obsidian tracking-widest rounded-sm",
+        luxuryOutline: "border border-bronze/40 bg-transparent text-foreground hover:bg-bronze/5 hover:border-bronze/60 tracking-widest rounded-sm",
         minimal: "bg-transparent text-cream-muted hover:text-foreground border-b border-transparent hover:border-obsidian/30 rounded-none px-0",
       },
       size: {

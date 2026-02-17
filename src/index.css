@@ -37,15 +37,19 @@
 
     --radius: 0.25rem;
 
-    /* Custom Obsidian Commercial tokens - White Theme */
+    /* Custom Obsidian Commercial tokens - Saint Haven boarded aesthetic */
     --obsidian: 0 0% 10%;
     --obsidian-light: 0 0% 15%;
     --stone: 0 0% 40%;
     --stone-light: 0 0% 60%;
     --cream: 0 0% 10%;
     --cream-muted: 0 0% 45%;
-    --gold: 0 0% 10%;
-    --gold-light: 0 0% 20%;
+    /* Metallic bronze/gold - boarded entrance feel */
+    --bronze: 30 25% 45%;
+    --bronze-light: 35 30% 55%;
+    --bronze-muted: 32 20% 35%;
+    --gold: 38 35% 50%;
+    --gold-light: 40 40% 62%;
     --charcoal: 0 0% 95%;
 
     /* Typography */
@@ -136,6 +140,28 @@
   .border-gradient {
     border-image: linear-gradient(90deg, transparent, hsl(var(--gold) / 0.3), transparent) 1;
   }
+
+  /* Boarded / paneled metallic frame - Saint Haven style */
+  .boarded-frame {
+    position: relative;
+    box-shadow:
+      inset 0 0 0 1px hsl(var(--bronze) / 0.25),
+      inset 0 0 0 2px hsl(var(--bronze-muted) / 0.1),
+      0 0 80px hsl(var(--bronze) / 0.08);
+  }
+
+  .boarded-border {
+    border: 1px solid hsl(var(--bronze) / 0.35);
+  }
+
+  .metallic-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--bronze-muted) / 0.15) 0%,
+      hsl(var(--bronze) / 0.25) 50%,
+      hsl(var(--bronze-light) / 0.2) 100%
+    );
+  }
 }
 
 @layer utilities {
@@ -153,6 +179,10 @@
 
   .animate-reveal {
     animation: reveal 1.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   .hover-lift {
@@ -214,6 +244,17 @@
   to {
     opacity: 1;
     clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

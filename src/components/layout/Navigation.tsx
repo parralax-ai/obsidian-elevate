@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import obsidianLogo from '@/assets/obsidian-logo.png';
 
 const Navigation = () => {
+  const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const isSubpage = location.pathname !== '/';
+  const showLogo = isScrolled || isSubpage;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +20,10 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsDropdownOpen(false);
+  }, [location.pathname]);
+
   const navLinks = [
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
@@ -23,7 +31,29 @@ const Navigation = () => {
     { href: '/experience', label: 'Experience' },
   ];
 
-  const shouldBlur = isScrolled || isMobileMenuOpen;
+  const shouldBlur = isScrolled || isDropdownOpen;
+
+  const closeDropdown = () => setIsDropdownOpen(false);
+
+  const DropdownContent = () => (
+    <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
+      {navLinks.map((link) => (
+        <Link
+          key={link.href}
+          to={link.href}
+          className="font-body text-sm tracking-[0.15em] uppercase text-cream-muted hover:text-foreground transition-colors duration-300"
+          onClick={closeDropdown}
+        >
+          {link.label}
+        </Link>
+      ))}
+      <Button variant="luxuryOutline" size="lg" className="mt-4" asChild>
+        <Link to="/#contact" onClick={closeDropdown}>
+          Get in Touch
+        </Link>
+      </Button>
+    </div>
+  );
 
   return (
     <nav
@@ -35,78 +65,61 @@ const Navigation = () => {
       style={shouldBlur ? {
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
-        backgroundColor: 'hsla(0, 0%, 100%, 0.95)'
+        backgroundColor: 'hsla(0, 0%, 100%, 0.95)',
+        borderBottom: '1px solid hsl(var(--bronze) / 0.15)'
       } : {}}
     >
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-20 lg:h-24">
-          {/* Logo */}
-          <Link 
-            to="/" 
-            className="font-display text-2xl lg:text-3xl tracking-[0.3em] text-foreground uppercase flex items-center gap-3 hover:opacity-90 transition-opacity duration-300"
-          >
-            <img 
-              src={obsidianLogo} 
-              alt="Obsidian Commercial Logo" 
-              className="h-20 w-20 lg:h-24 lg:w-24 object-contain flex-shrink-0"
-              style={{ display: 'block', alignSelf: 'center' }}
-            />
-            <span className="leading-none">Obsidian Commercial</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-12">
-            {navLinks.map((link) => (
+          <div className="flex items-center gap-4">
+            {/* 3-bar hamburger - top left, all pages */}
+            <button
+              className="flex flex-col justify-center gap-1.5 w-10 h-10 text-foreground hover:opacity-80 transition-opacity touch-target"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              aria-label="Toggle menu"
+              aria-expanded={isDropdownOpen}
+            >
+              {isDropdownOpen ? (
+                <X size={24} className="flex-shrink-0" />
+              ) : (
+                <>
+                  <span className="block w-6 h-0.5 bg-current" />
+                  <span className="block w-6 h-0.5 bg-current" />
+                  <span className="block w-6 h-0.5 bg-current" />
+                </>
+              )}
+            </button>
+            {/* Logo - appears after scroll on landing, or on subpages (link to home) */}
+            {showLogo && (
               <Link
-                key={link.href}
-                to={link.href}
-                className="font-body text-xs tracking-[0.2em] uppercase text-cream-muted hover:text-foreground transition-colors duration-300"
+                to="/"
+                className="flex items-center gap-2 hover:opacity-90 transition-opacity"
+                aria-label="Obsidian Commercial - Home"
               >
-                {link.label}
+                <img
+                  src={obsidianLogo}
+                  alt="Obsidian Commercial Logo"
+                  className="h-16 w-16 lg:h-20 lg:w-20 object-contain flex-shrink-0"
+                  style={{ display: 'block' }}
+                />
               </Link>
-            ))}
-            <Button variant="luxuryOutline" size="sm" asChild>
-              <Link to="/#contact">Get in Touch</Link>
-            </Button>
+            )}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="lg:hidden text-foreground"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="w-10" />
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
+        {/* Dropdown - animates down */}
+        {isDropdownOpen && (
           <div 
-            className="lg:hidden absolute top-full left-0 right-0 border-b border-border animate-fade-up"
+            className="absolute top-full left-0 right-0 border-b overflow-hidden animate-slide-down boarded-border"
             style={{
               backdropFilter: 'blur(12px)',
               WebkitBackdropFilter: 'blur(12px)',
               backgroundColor: 'hsla(0, 0%, 100%, 0.98)'
             }}
           >
-            <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className="font-body text-sm tracking-[0.15em] uppercase text-cream-muted hover:text-foreground transition-colors duration-300"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <Button variant="luxuryOutline" size="lg" className="mt-4" asChild>
-                <Link to="/#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  Get in Touch
-                </Link>
-              </Button>
-            </div>
+            <DropdownContent />
           </div>
         )}
       </div>

@@ -1,4 +1,5 @@
 import Navigation from '@/components/layout/Navigation';
+import LandingHero from '@/components/sections/LandingHero';
 import Slideshow from '@/components/sections/Slideshow';
 import Hero from '@/components/sections/Hero';
 import Contact from '@/components/sections/Contact';
@@ -8,6 +9,7 @@ const Index = () => {
   return (
     <main className="bg-background w-full overflow-x-hidden">
       <Navigation />
+      <LandingHero />
       <Slideshow />
       <Hero />
       <Contact />

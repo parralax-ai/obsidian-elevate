@@ -74,6 +74,11 @@ export default {
           DEFAULT: "hsl(var(--gold))",
           light: "hsl(var(--gold-light))",
         },
+        bronze: {
+          DEFAULT: "hsl(var(--bronze))",
+          light: "hsl(var(--bronze-light))",
+          muted: "hsl(var(--bronze-muted))",
+        },
         charcoal: "hsl(var(--charcoal))",
       },
       fontFamily: {
