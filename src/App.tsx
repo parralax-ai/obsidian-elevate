@@ -9,6 +9,7 @@ import AboutPage from "./pages/AboutPage";
 import ServicesPage from "./pages/ServicesPage";
 import TechnologyPage from "./pages/TechnologyPage";
 import ExperiencePage from "./pages/ExperiencePage";
+import ServiceDetailPage from "./pages/ServiceDetailPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -52,6 +53,7 @@ const AnimatedRoutes = () => {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/technology" element={<TechnologyPage />} />
         <Route path="/experience" element={<ExperiencePage />} />
+        <Route path="/services/:slug" element={<ServiceDetailPage />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

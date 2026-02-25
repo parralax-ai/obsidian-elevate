@@ -36,7 +36,7 @@ const Navigation = () => {
   const closeDropdown = () => setIsDropdownOpen(false);
 
   const DropdownContent = () => (
-    <div className="container mx-auto px-6 py-8 flex flex-col gap-6">
+    <div className="container mx-auto px-6 py-8 flex flex-col items-center justify-center gap-6 text-center">
       {navLinks.map((link) => (
         <Link
           key={link.href}
