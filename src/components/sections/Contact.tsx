@@ -55,23 +55,23 @@ const Contact = () => {
       
       <div className="w-full max-w-full mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 w-full">
-          {/* Left Content */}
+          {/* Left Content - on iPhone only "Get in Touch" then form; from sm up show headline + paragraph + contact info */}
           <div className="w-full min-w-0">
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-cream-muted mb-4 sm:mb-6">
+            <p className="font-body text-base sm:text-lg tracking-[0.25em] uppercase text-cream-muted mt-6 sm:mt-0 mb-4 sm:mb-6">
               Get in Touch
             </p>
-            <h2 className="font-display text-2xl sm:text-3xl lg:text-5xl font-light text-foreground leading-tight mb-4 sm:mb-6">
+            <h2 className="hidden sm:block font-display text-2xl sm:text-3xl lg:text-5xl font-light text-foreground leading-tight mb-4 sm:mb-6">
               Let's discuss your<br />
               <span className="italic text-cream-muted">workplace needs</span>
             </h2>
-            <p className="font-body text-sm sm:text-base text-cream-muted leading-relaxed mb-6 sm:mb-8 lg:mb-12 w-full">
+            <p className="hidden sm:block font-body text-sm sm:text-base text-cream-muted leading-relaxed mb-6 sm:mb-8 lg:mb-12 w-full">
               We approach every inquiry as the beginning of a potential partnership. 
               Tell us about your organisation and your workplace vision - we'd love to 
               explore how Obsidian might serve you.
             </p>
 
-            {/* Contact Info */}
-            <div className="space-y-6">
+            {/* Contact Info - hidden on iPhone so "Get in touch" goes straight to form */}
+            <div className="hidden sm:block space-y-6">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-sm bg-obsidian/10 flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-5 h-5 text-obsidian" />
@@ -93,7 +93,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Contact Form - on iPhone appears right after "Get in Touch" */}
           <div className="bg-card rounded-sm border border-border p-6 sm:p-8 lg:p-12 w-full min-w-0">
             <form onSubmit={handleSubmit} className="w-full">
               <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 w-full mb-4 sm:mb-6">

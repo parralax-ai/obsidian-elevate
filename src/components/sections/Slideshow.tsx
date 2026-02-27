@@ -37,19 +37,13 @@ const Slideshow = () => {
 
   return (
     <section 
-      className="relative w-full overflow-hidden pt-20 lg:pt-24 boarded-frame" 
+      className="relative w-full overflow-hidden pt-20 lg:pt-24" 
       style={{ 
         zIndex: 1, 
         minHeight: 'calc(100vh - 5rem)',
         height: 'calc(100vh - 5rem)',
       }}
     >
-      {/* Boarded metallic inner frame */}
-      <div className="absolute inset-0 pointer-events-none z-10" style={{ padding: '1px' }}>
-        <div className="absolute inset-2 sm:inset-4 lg:inset-6 border border-bronze/30" />
-        <div className="absolute inset-4 sm:inset-6 lg:inset-8 border border-bronze/15" />
-      </div>
-
       {/* Slides Container */}
       <div className="relative h-full w-full">
         {slides.map((slide, index) => (
@@ -80,16 +74,11 @@ const Slideshow = () => {
         ))}
       </div>
 
-      {/* Overlay text - Saint Haven "Choose your sanctuary" style */}
-      <div className="absolute bottom-24 sm:bottom-28 left-6 lg:left-12 z-20 flex items-center gap-4 opacity-0 animate-fade-up" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
+      {/* Overlay text */}
+      <div className="absolute bottom-24 sm:bottom-28 left-6 lg:left-12 z-20 opacity-0 animate-fade-up" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
         <p className="font-display text-lg sm:text-xl lg:text-2xl text-white/95 tracking-[0.15em] uppercase">
           Elevate your workplace
         </p>
-        <a href="#hero-content" className="text-white/80 hover:text-white transition-colors" aria-label="Scroll down">
-          <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </a>
       </div>
 
       {/* Slide Indicators - Saint Haven style minimal */}

@@ -1,7 +1,6 @@
 import Navigation from '@/components/layout/Navigation';
 import LandingHero from '@/components/sections/LandingHero';
 import Slideshow from '@/components/sections/Slideshow';
-import Hero from '@/components/sections/Hero';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/layout/Footer';
 
@@ -11,7 +10,6 @@ const Index = () => {
       <Navigation />
       <LandingHero />
       <Slideshow />
-      <Hero />
       <Contact />
       <Footer />
     </main>
