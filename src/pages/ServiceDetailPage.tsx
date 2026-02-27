@@ -30,14 +30,16 @@ const ServiceDetailPage = () => {
       <Navigation />
       <div className="pt-28 lg:pt-32 pb-20">
         <div className="container mx-auto px-6 lg:px-12 max-w-3xl">
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-2 font-body text-xs tracking-[0.2em] uppercase text-cream-muted hover:text-foreground mb-12 transition-colors"
-          >
-            Services
-          </Link>
-          <div className="w-12 h-12 rounded-sm bg-bronze/10 flex items-center justify-center mb-8">
-            <Icon className="w-6 h-6 text-bronze" />
+          <div className="flex flex-col items-center sm:items-start">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 font-body text-xs tracking-[0.2em] uppercase text-cream-muted hover:text-foreground mb-12 transition-colors"
+            >
+              Services
+            </Link>
+            <div className="w-12 h-12 rounded-sm bg-bronze/10 flex items-center justify-center mb-8">
+              <Icon className="w-6 h-6 text-bronze" />
+            </div>
           </div>
           <h1 className="font-display text-3xl lg:text-4xl font-light text-foreground mb-6">
             {category.title}

@@ -5,18 +5,18 @@ const Footer = () => {
     <footer className="py-16 lg:py-20 bg-card border-t border-border">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-8 mb-16">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <h3 className="font-display text-2xl tracking-[0.3em] text-foreground uppercase mb-4 flex items-center gap-3">
+          {/* Brand - centered on iPhone */}
+          <div className="flex flex-col items-center text-center md:block md:text-left lg:col-span-2">
+            <h3 className="font-display text-2xl tracking-[0.3em] text-foreground uppercase mb-4 flex flex-col items-center gap-3 md:flex-row md:items-center">
               <img 
                 src={obsidianLogo} 
                 alt="Obsidian Commercial Logo" 
-                className="h-25 w-25 object-contain flex-shrink-0"
+                className="object-contain flex-shrink-0"
                 style={{ display: 'block', height: '62.5px', width: '62.5px' }}
               />
-              Obsidian Commercial
+              <span>Obsidian Commercial</span>
             </h3>
-            <p className="font-body text-sm text-cream-muted leading-relaxed max-w-md mb-6">
+            <p className="font-body text-sm text-cream-muted leading-relaxed max-w-md mb-6 mx-auto md:mx-0">
               Australian-owned commercial cleaning and facilities management company dedicated 
               to creating cleaner, safer, and more welcoming workplaces across metropolitan 
               and regional Australia.

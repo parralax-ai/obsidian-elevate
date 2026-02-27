@@ -6,7 +6,7 @@ const LandingHero = () => {
       {/* Boarded aesthetic - subtle metallic gradient base */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-charcoal/30" />
       <div className="absolute inset-0 metallic-gradient opacity-30" />
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 w-full max-w-full">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 w-full max-w-full mx-auto">
         {/* Logo only - no properties/facets; on iPhone slightly less bottom margin so title sits higher */}
         <div className="relative flex items-center justify-center mb-4 sm:mb-8 w-[25rem] h-[25rem] max-w-[90vw] max-h-[55vh] sm:max-w-none sm:max-h-none sm:w-52 sm:h-52 lg:w-64 lg:h-64 xl:w-80 xl:h-80">
           <img

@@ -56,7 +56,7 @@ const Contact = () => {
       <div className="w-full max-w-full mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 w-full">
           {/* Left Content - on iPhone only "Get in Touch" then form; from sm up show headline + paragraph + contact info */}
-          <div className="w-full min-w-0">
+          <div className="w-full min-w-0 text-center sm:text-left">
             <p className="font-body text-base sm:text-lg tracking-[0.25em] uppercase text-cream-muted mt-6 sm:mt-0 mb-4 sm:mb-6">
               Get in Touch
             </p>
