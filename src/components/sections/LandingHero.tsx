@@ -15,7 +15,7 @@ const LandingHero = () => {
             className="w-full h-full object-contain"
           />
         </div>
-        {/* Company name - larger on iPhone, then scale up */}
+        {/* Company name */}
         <h1
           className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-foreground tracking-[0.2em] uppercase leading-none mb-4 opacity-0 animate-fade-up"
           style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}

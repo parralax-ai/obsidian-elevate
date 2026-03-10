@@ -74,13 +74,6 @@ const Slideshow = () => {
         ))}
       </div>
 
-      {/* Overlay text */}
-      <div className="absolute bottom-24 sm:bottom-28 left-6 lg:left-12 z-20 opacity-0 animate-fade-up" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
-        <p className="font-display text-lg sm:text-xl lg:text-2xl text-white/95 tracking-[0.15em] uppercase">
-          Elevate your workplace
-        </p>
-      </div>
-
       {/* Slide Indicators - Saint Haven style minimal */}
       <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 z-30">
         {slides.map((_, index) => (
