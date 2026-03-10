@@ -7,13 +7,12 @@ const LandingHero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-charcoal/30" />
       <div className="absolute inset-0 metallic-gradient opacity-30" />
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 w-full max-w-full mx-auto">
-        {/* Logo only - no properties/facets; on iPhone slightly less bottom margin so title sits higher */}
-        <div className="relative flex items-center justify-center mb-4 sm:mb-8 w-[25rem] h-[25rem] max-w-[90vw] max-h-[55vh] sm:max-w-none sm:max-h-none sm:w-52 sm:h-52 lg:w-64 lg:h-64 xl:w-80 xl:h-80">
+        {/* Logo */}
+        <div className="relative flex items-center justify-center mb-4 sm:mb-8 w-[25rem] h-[25rem] max-w-[90vw] max-h-[55vh] sm:max-w-none sm:max-h-none sm:w-52 sm:h-52 lg:w-64 lg:h-64 xl:w-80 xl:h-80 opacity-0 animate-fade-up" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
           <img
             src={obsidianLogo}
             alt="Obsidian Commercial Logo"
-            className="w-full h-full object-contain opacity-0 animate-fade-up"
-            style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
+            className="w-full h-full object-contain"
           />
         </div>
         {/* Company name - larger on iPhone, then scale up */}
@@ -23,13 +22,7 @@ const LandingHero = () => {
         >
           Obsidian
         </h1>
-        <p
-          className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-cream-muted tracking-[0.35em] uppercase font-extralight opacity-0 animate-fade-up"
-          style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
-        >
-          Commercial
-        </p>
-        {/* Subtitle - refined */}
+        {/* Subtitle */}
         <p
           className="font-body text-xs sm:text-sm tracking-[0.25em] uppercase text-cream-muted/80 mt-8 sm:mt-12 max-w-md opacity-0 animate-fade-up"
           style={{ animationDelay: '0.7s', animationFillMode: 'forwards' }}
