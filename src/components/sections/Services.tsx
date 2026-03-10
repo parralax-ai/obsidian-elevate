@@ -17,7 +17,7 @@ const Services = () => {
             <Link
               key={category.slug}
               to={`/services/${category.slug}`}
-              className="group flex items-center justify-between gap-4 bg-card rounded-sm px-6 py-5 border border-border hover:border-bronze/40 transition-all duration-300"
+              className="group flex flex-col items-center gap-2 md:flex-row md:items-center md:justify-between md:gap-4 bg-card rounded-sm px-6 py-5 border border-border hover:border-bronze/40 transition-all duration-300 text-center md:text-left"
             >
               <span className="font-display text-lg lg:text-xl text-foreground group-hover:text-bronze transition-colors duration-300">
                 {category.title}

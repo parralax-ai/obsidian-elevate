@@ -29,7 +29,7 @@ const ServiceDetailPage = () => {
     <main className="min-h-screen bg-background w-full max-w-full overflow-x-hidden">
       <Navigation />
       <div className="pt-28 lg:pt-32 pb-20">
-        <div className="container mx-auto px-6 lg:px-12 max-w-3xl">
+        <div className="container mx-auto px-6 lg:px-12 max-w-3xl text-center md:text-left">
           <div className="flex flex-col items-center sm:items-start">
             <Link
               to="/services"
@@ -47,15 +47,15 @@ const ServiceDetailPage = () => {
           <p className="font-body text-base text-cream-muted leading-relaxed mb-12">
             {category.description}
           </p>
-          <ul className="space-y-3">
+          <ul className="space-y-3 text-center md:text-left">
             {category.services.map((item, i) => (
-              <li key={i} className="flex items-start gap-3">
+              <li key={i} className="flex items-start gap-3 justify-center md:justify-start">
                 <CheckCircle2 className="w-5 h-5 text-bronze mt-0.5 flex-shrink-0" />
                 <span className="font-body text-cream-muted">{item}</span>
               </li>
             ))}
           </ul>
-          <div className="mt-16 pt-8 border-t border-border">
+          <div className="mt-16 pt-8 border-t border-border flex justify-center md:justify-start">
             <Link
               to="/#contact"
               className="inline-flex items-center gap-2 font-body text-sm tracking-[0.15em] uppercase text-foreground hover:text-bronze transition-colors"

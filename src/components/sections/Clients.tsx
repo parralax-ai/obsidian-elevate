@@ -50,7 +50,7 @@ const Clients = () => {
             <h2 className="font-display text-3xl lg:text-5xl font-light text-foreground leading-tight mb-6">
               Supporting clients across diverse industries
             </h2>
-            <p className="font-body text-base text-cream-muted leading-relaxed">
+            <p className="font-body text-base text-cream-muted leading-relaxed text-center">
               We proudly support clients across a diverse range of industries, delivering 
               tailored solutions that meet the unique needs of each sector.
             </p>
@@ -61,9 +61,9 @@ const Clients = () => {
             {industries.map((industry, index) => (
               <div 
                 key={index}
-                className="group p-8 bg-background rounded-sm border border-border hover:border-obsidian/30 transition-all duration-500 hover-lift"
+                className="group p-8 bg-background rounded-sm border border-border hover:border-obsidian/30 transition-all duration-500 hover-lift text-center md:text-left"
               >
-                <div className="w-12 h-12 rounded-sm bg-obsidian/10 flex items-center justify-center mb-6 group-hover:bg-obsidian/20 transition-colors duration-300">
+                <div className="w-12 h-12 rounded-sm bg-obsidian/10 flex items-center justify-center mb-6 mx-auto md:mx-0 group-hover:bg-obsidian/20 transition-colors duration-300">
                   <industry.icon className="w-6 h-6 text-obsidian" />
                 </div>
                 <h3 className="font-display text-xl text-foreground">
@@ -83,7 +83,7 @@ const Clients = () => {
             <h2 className="font-display text-3xl lg:text-5xl font-light text-foreground leading-tight mb-6">
               Trusted by leading organisations
             </h2>
-            <p className="font-body text-base text-cream-muted leading-relaxed">
+            <p className="font-body text-base text-cream-muted leading-relaxed text-center">
               We have successfully delivered and continue to manage contracts for organisations 
               across professional services, medical and allied health, fitness, manufacturing, 
               entertainment, retail, beauty, childcare, and education.
@@ -95,9 +95,9 @@ const Clients = () => {
             {clients.map((client, index) => (
               <div 
                 key={index}
-                className="p-6 bg-background rounded-sm border border-border hover:border-obsidian/30 transition-all duration-300"
+                className="p-6 bg-background rounded-sm border border-border hover:border-obsidian/30 transition-all duration-300 text-center md:text-left"
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3 justify-center md:justify-start">
                   <Trophy className="w-5 h-5 text-obsidian flex-shrink-0" />
                   <p className="font-body text-base text-foreground">
                     {client}
@@ -113,7 +113,7 @@ const Clients = () => {
           <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-8">
             Community & Responsibility
           </h3>
-          <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed">
+          <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed text-center">
             <p>
               At Obsidian Commercial, we believe our responsibility extends beyond the spaces we clean. 
               We proudly support charitable organisations, community groups, and grassroots initiatives 

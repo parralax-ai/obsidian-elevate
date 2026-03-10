@@ -16,7 +16,7 @@ const About = () => {
             Australian-Owned Commercial Cleaning & Facilities Management
           </h2>
           
-          <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed">
+          <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed text-center md:text-left">
             <p>
               Obsidian Commercial specialises in commercial cleaning and integrated facilities 
               management, supporting clients across a wide range of industries. Proudly 
@@ -38,8 +38,8 @@ const About = () => {
 
         {/* Mission & Vision */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-24">
-          <div className="bg-card rounded-sm p-8 lg:p-12 border border-border">
-            <div className="w-12 h-12 rounded-sm bg-obsidian/10 flex items-center justify-center mb-6">
+          <div className="bg-card rounded-sm p-8 lg:p-12 border border-border text-center md:text-left">
+            <div className="w-12 h-12 rounded-sm bg-obsidian/10 flex items-center justify-center mb-6 mx-auto md:mx-0">
               <Target className="w-6 h-6 text-obsidian" />
             </div>
             <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
@@ -52,8 +52,8 @@ const About = () => {
             </p>
           </div>
 
-          <div className="bg-card rounded-sm p-8 lg:p-12 border border-border">
-            <div className="w-12 h-12 rounded-sm bg-obsidian/10 flex items-center justify-center mb-6">
+          <div className="bg-card rounded-sm p-8 lg:p-12 border border-border text-center md:text-left">
+            <div className="w-12 h-12 rounded-sm bg-obsidian/10 flex items-center justify-center mb-6 mx-auto md:mx-0">
               <Eye className="w-6 h-6 text-obsidian" />
             </div>
             <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-4">
@@ -82,7 +82,7 @@ const About = () => {
               <img 
                 src={togetherPhoto} 
                 alt="Dominic Grech and Shane Ali, Co-Founders of Obsidian Commercial" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover grayscale"
               />
             </div>
           </div>
@@ -94,7 +94,7 @@ const About = () => {
                 <img 
                   src={domPhoto} 
                   alt="Dominic Grech, Co-Founder" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover grayscale"
                 />
               </div>
               <h4 className="font-display text-2xl lg:text-3xl text-foreground mb-3 text-center">
@@ -117,7 +117,7 @@ const About = () => {
                 <img 
                   src={shanePhoto} 
                   alt="Shane Ali, Co-Founder" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover grayscale"
                 />
               </div>
               <h4 className="font-display text-2xl lg:text-3xl text-foreground mb-3 text-center">
@@ -127,8 +127,7 @@ const About = () => {
                 Co-Founder & Director
               </p>
               <p className="font-body text-base text-cream-muted leading-relaxed text-center">
-                Shane's background in legal costing brings a unique perspective to Obsidian Commercial. 
-                With a vision to bring people back into the office, he understands that exceptional 
+                With a vision to bring people back into the office, Shane understands that exceptional 
                 workplace experiences are fundamental to attracting and retaining talent. His dedication 
                 to creating spaces that inspire and engage drives our mission forward.
               </p>
@@ -150,7 +149,7 @@ const About = () => {
           <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-8 text-center">
             Leadership & Culture
           </h3>
-          <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed mb-12">
+          <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed mb-12 text-center md:text-left">
             <p>
               With over 15 years of industry experience, 30+ engaged employees, more than 4,500 
               site visits annually, and 95+ active clients, our leadership team brings a practical, 
@@ -188,7 +187,7 @@ const About = () => {
           <h3 className="font-display text-2xl lg:text-3xl text-foreground mb-8 text-center">
             What Sets Us Apart
           </h3>
-          <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed">
+          <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed text-center md:text-left">
             <p>
               In a competitive cleaning and facilities industry, Obsidian Commercial stands apart 
               through a combination of personalised service, technology-led delivery, and a 
