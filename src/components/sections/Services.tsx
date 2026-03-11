@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
 import { serviceCategories } from '@/data/services';
 
 const Services = () => {
@@ -10,7 +12,24 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 max-w-5xl lg:max-w-7xl mx-auto">
+        {/* Mobile / tablet: original minimal tappable cards linking to subpages */}
+        <div className="grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto lg:hidden">
+          {serviceCategories.map((category) => (
+            <Link
+              key={category.slug}
+              to={`/services/${category.slug}`}
+              className="group flex flex-col items-center gap-2 md:flex-row md:items-center md:justify-between md:gap-4 bg-card rounded-sm px-6 py-5 border border-border hover:border-bronze/40 transition-all duration-300 text-center md:text-left"
+            >
+              <span className="font-display text-lg text-foreground group-hover:text-bronze transition-colors duration-300">
+                {category.title}
+              </span>
+              <ArrowUpRight className="w-5 h-5 text-cream-muted group-hover:text-bronze flex-shrink-0 transition-colors duration-300" />
+            </Link>
+          ))}
+        </div>
+
+        {/* Laptop and up: standalone descriptive cards (no navigation) */}
+        <div className="hidden lg:grid lg:grid-cols-3 gap-6 lg:gap-10 max-w-5xl lg:max-w-7xl mx-auto">
           {serviceCategories.map((category) => {
             const Icon = category.icon;
             const bullets = category.services.slice(0, 5);
