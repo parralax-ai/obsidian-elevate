@@ -22,12 +22,19 @@ const LandingHero = () => {
         >
           Obsidian
         </h1>
-        {/* Subtitle */}
+        {/* Subheading */}
         <p
-          className="font-body text-xs sm:text-sm tracking-[0.25em] uppercase text-cream-muted/80 mt-8 sm:mt-12 max-w-md opacity-0 animate-fade-up"
+          className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-cream-muted tracking-[0.35em] uppercase font-extralight mt-2 sm:mt-3 opacity-0 animate-fade-up"
+          style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
+        >
+          Commercial
+        </p>
+        {/* Smaller sub line */}
+        <p
+          className="font-body text-xs sm:text-sm tracking-[0.25em] uppercase text-cream-muted/80 mt-6 sm:mt-8 max-w-md opacity-0 animate-fade-up"
           style={{ animationDelay: '0.7s', animationFillMode: 'forwards' }}
         >
-          Commercial cleaning & facilities management
+          Cleaning & facilities management
         </p>
 
         {/* Scroll indicator - clear gap below subheading so no overlap on iPhone */}

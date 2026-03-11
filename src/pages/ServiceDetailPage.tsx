@@ -47,11 +47,11 @@ const ServiceDetailPage = () => {
           <p className="font-body text-base text-cream-muted leading-relaxed mb-12">
             {category.description}
           </p>
-          <ul className="space-y-3 text-center md:text-left">
+          <ul className="space-y-3 text-left list-none pl-0">
             {category.services.map((item, i) => (
-              <li key={i} className="flex items-start gap-3 justify-center md:justify-start">
+              <li key={i} className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-bronze mt-0.5 flex-shrink-0" />
-                <span className="font-body text-cream-muted">{item}</span>
+                <span className="font-body text-cream-muted leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>

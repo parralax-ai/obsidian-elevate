@@ -18,20 +18,13 @@ const About = () => {
           
           <div className="space-y-6 font-body text-base text-cream-muted leading-relaxed text-center md:text-left">
             <p>
-              Obsidian Commercial specialises in commercial cleaning and integrated facilities 
-              management, supporting clients across a wide range of industries. Proudly 
-              Australian-owned, we bring hands-on experience, flexibility, and a genuine 
-              commitment to quality across every site we manage.
+              Obsidian Commercial specialises in cleaning and integrated facilities management, supporting clients across a wide range of industries. Proudly Australian-owned, we bring hands-on experience, flexibility, and a genuine commitment to quality across every site we manage.
             </p>
             <p>
-              Our teams deliver daily cleaning, hygiene services, waste management, specialist 
-              cleaning, project-based works, and workplace experience enhancements. Every 
-              service is designed around consistency, accountability, and care; ensuring spaces 
-              are safe, functional, and professionally presented.
+              Our teams can deliver daily cleaning, hygiene services, waste management, specialist cleaning, project-based works, and workplace experience enhancements. Every service is designed around consistency, accountability, and care; ensuring spaces are safe, functional, and professionally presented.
             </p>
             <p>
-              We operate across metropolitan and regional Australia, supported by a strong 
-              operational structure, experienced leadership, and a culture of continuous improvement.
+              We operate across metropolitan and regional Australia, supported by a strong operational structure, experienced leadership, and a culture of continuous improvement.
             </p>
           </div>
         </div>
